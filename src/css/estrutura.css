@@ -1,0 +1,261 @@
+/* Estilos específicos para esta guía */
+        :root {
+            --backend-color: #8a2be2;
+            --frontend-color: #4b8bbe;
+            --fullstack-color: #2e8b57;
+            --dark-bg: #2d2d2d;
+            --light-bg: #f5f5f5;
+        }
+
+        .guide-header {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .guide-title {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .architecture-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .architecture-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+        
+        .architecture-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .guide-description {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 1rem auto;
+            max-width: 700px;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .guide-sidebar {
+            flex: 0 0 250px;
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .guide-toc {
+            list-style: none;
+        }
+        
+        .guide-toc li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .guide-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .guide-toc a:hover {
+            background: #f0f0f0;
+        }
+        
+        .guide-toc .backend-link:hover {
+            color: var(--backend-color);
+        }
+        
+        .guide-toc .frontend-link:hover {
+            color: var(--frontend-color);
+        }
+        
+        .guide-toc .fullstack-link:hover {
+            color: var(--fullstack-color);
+        }
+        
+        .guide-main {
+            flex: 1;
+        }
+        
+        .architecture-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .backend-section {
+            border-top: 4px solid var(--backend-color);
+        }
+        
+        .frontend-section {
+            border-top: 4px solid var(--frontend-color);
+        }
+        
+        .fullstack-section {
+            border-top: 4px solid var(--fullstack-color);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+        
+        .backend-title {
+            color: var(--backend-color);
+        }
+        
+        .frontend-title {
+            color: var(--frontend-color);
+        }
+        
+        .fullstack-title {
+            color: var(--fullstack-color);
+        }
+        
+        .code-block {
+            background: var(--dark-bg);
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            line-height: 1.5;
+        }
+        
+        .folder-structure {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            font-family: monospace;
+            margin: 1rem 0;
+        }
+        
+        .folder {
+            color: #4b8bbe;
+            font-weight: bold;
+        }
+        
+        .file {
+            color: #333;
+            margin-left: 1rem;
+        }
+        
+        .tech-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tech-card h4 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tech-card i {
+            margin-right: 0.5rem;
+        }
+        
+        .backend-tech {
+            border-left: 4px solid var(--backend-color);
+        }
+        
+        .frontend-tech {
+            border-left: 4px solid var(--frontend-color);
+        }
+        
+        .note {
+            background: #e7f4ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .guide-download {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .guide-sidebar {
+                position: static;
+                flex: 1;
+                margin-bottom: 2rem;
+            }
+        }

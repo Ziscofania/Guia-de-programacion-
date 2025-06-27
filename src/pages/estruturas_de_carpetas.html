@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras Backend/Frontend - Guía para Programadores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/estrutura.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="../index.html#guias">Guías</a></li>
+                    <li><a href="../index.html#descargas">Descargas</a></li>
+                    <li><a href="../index.html#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">
+            <div class="guide-title">
+                <div class="architecture-icons">
+                    <img src="../images/backend-icon.png" alt="Backend" class="architecture-icon">
+                    <img src="../images/frontend-icon.png" alt="Frontend" class="architecture-icon">
+                    <img src="../images/fullstack-icon.png" alt="Fullstack" class="architecture-icon">
+                </div>
+                <h1>Estructuras de Proyectos Backend y Frontend</h1>
+                <p class="guide-description">Aprende a organizar tus proyectos de desarrollo web de manera profesional y escalable</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion" class="backend-link">Introducción</a></li>
+                        <li><a href="#backend-estructura" class="backend-link">Estructura Backend</a></li>
+                        <li><a href="#backend-tecnologias" class="backend-link">Tecnologías Backend</a></li>
+                        <li><a href="#backend-patrones" class="backend-link">Patrones de Diseño</a></li>
+                        <li><a href="#frontend-estructura" class="frontend-link">Estructura Frontend</a></li>
+                        <li><a href="#frontend-tecnologias" class="frontend-link">Tecnologías Frontend</a></li>
+                        <li><a href="#frontend-arquitecturas" class="frontend-link">Arquitecturas Modernas</a></li>
+                        <li><a href="#fullstack-estructura" class="fullstack-link">Proyectos Fullstack</a></li>
+                        <li><a href="#microservicios" class="backend-link">Microservicios</a></li>
+                        <li><a href="#monorepo" class="fullstack-link">Monorepos</a></li>
+                        <li><a href="#mejores-practicas" class="fullstack-link">Mejores Prácticas</a></li>
+                        <li><a href="#recursos" class="backend-link">Recursos Adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion" class="architecture-section">
+                        <h2 class="section-title">Introducción a las Estructuras de Proyectos</h2>
+                        <p>Una buena estructura de proyecto es fundamental para el desarrollo de software mantenible y escalable. Esta guía cubre las mejores prácticas para organizar tus proyectos backend, frontend y fullstack.</p>
+                        
+                        <h3>¿Por qué es importante la estructura?</h3>
+                        <ul>
+                            <li><strong>Mantenibilidad:</strong> Facilita la navegación y comprensión del código</li>
+                            <li><strong>Escalabilidad:</strong> Permite el crecimiento ordenado del proyecto</li>
+                            <li><strong>Colaboración:</strong> Hace más fácil trabajar en equipo</li>
+                            <li><strong>Testing:</strong> Organiza mejor las pruebas unitarias e integrales</li>
+                            <li><strong>Despliegue:</strong> Simplifica los procesos de CI/CD</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> No existe una estructura perfecta universal. Debe adaptarse a las necesidades específicas de cada proyecto y equipo.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN ESTRUCTURA BACKEND -->
+                    <article id="backend-estructura" class="architecture-section backend-section">
+                        <h2 class="section-title backend-title"><i class="fas fa-server"></i> Estructura de Proyectos Backend</h2>
+                        
+                        <p>La estructura de un proyecto backend depende del lenguaje y framework utilizado, pero existen patrones comunes que pueden aplicarse en la mayoría de casos.</p>
+                        
+                        <h3>Estructura básica para API REST (Node.js/Express)</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/src</div>
+                            <div class="folder">│   /config</div>
+                            <div class="file">│   │   database.js</div>
+                            <div class="file">│   │   server.js</div>
+                            <div class="folder">│   /controllers</div>
+                            <div class="file">│   │   userController.js</div>
+                            <div class="file">│   │   productController.js</div>
+                            <div class="folder">│   /models</div>
+                            <div class="file">│   │   User.js</div>
+                            <div class="file">│   │   Product.js</div>
+                            <div class="folder">│   /routes</div>
+                            <div class="file">│   │   userRoutes.js</div>
+                            <div class="file">│   │   productRoutes.js</div>
+                            <div class="file">│   │   index.js</div>
+                            <div class="folder">│   /middlewares</div>
+                            <div class="file">│   │   auth.js</div>
+                            <div class="file">│   │   errorHandler.js</div>
+                            <div class="folder">│   /services</div>
+                            <div class="file">│   │   userService.js</div>
+                            <div class="file">│   │   emailService.js</div>
+                            <div class="folder">│   /utils</div>
+                            <div class="file">│   │   helpers.js</div>
+                            <div class="file">│   │   logger.js</div>
+                            <div class="folder">│   /tests</div>
+                            <div class="file">│   │   user.test.js</div>
+                            <div class="file">│   │   product.test.js</div>
+                            <div class="file">│   app.js</div>
+                            <div class="file">│   server.js</div>
+                            <div class="file">.env</div>
+                            <div class="file">package.json</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        
+                        <h3>Estructura para Django (Python)</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/project_name</div>
+                            <div class="folder">│   /apps</div>
+                            <div class="folder">│   │   /users</div>
+                            <div class="file">│   │   │   models.py</div>
+                            <div class="file">│   │   │   views.py</div>
+                            <div class="file">│   │   │   serializers.py</div>
+                            <div class="file">│   │   │   urls.py</div>
+                            <div class="folder">│   │   /products</div>
+                            <div class="file">│   │   │   models.py</div>
+                            <div class="file">│   │   │   views.py</div>
+                            <div class="file">│   │   │   serializers.py</div>
+                            <div class="file">│   │   │   urls.py</div>
+                            <div class="folder">│   /config</div>
+                            <div class="file">│   │   settings.py</div>
+                            <div class="file">│   │   urls.py</div>
+                            <div class="file">│   │   wsgi.py</div>
+                            <div class="folder">│   /static</div>
+                            <div class="folder">│   /templates</div>
+                            <div class="folder">│   /tests</div>
+                            <div class="file">│   manage.py</div>
+                            <div class="file">requirements.txt</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        
+                        <h3>Explicación de directorios clave</h3>
+                        <ul>
+                            <li><strong>config/</strong>: Configuración de la aplicación (BD, servidor, etc.)</li>
+                            <li><strong>controllers/</strong>: Lógica para manejar las solicitudes HTTP</li>
+                            <li><strong>models/</strong>: Definiciones de modelos de datos</li>
+                            <li><strong>routes/</strong>: Definición de endpoints de la API</li>
+                            <li><strong>middlewares/</strong>: Funciones que procesan solicitudes antes de llegar a los controladores</li>
+                            <li><strong>services/</strong>: Lógica de negocio reutilizable</li>
+                            <li><strong>tests/</strong>: Pruebas unitarias e integrales</li>
+                        </ul>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Mantén una separación clara de responsabilidades (SoC). Cada archivo/clase debe tener una única responsabilidad.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN TECNOLOGÍAS BACKEND -->
+                    <article id="backend-tecnologias" class="architecture-section backend-section">
+                        <h2 class="section-title backend-title"><i class="fas fa-server"></i> Tecnologías Backend</h2>
+                        
+                        <p>Existen múltiples tecnologías para desarrollo backend, cada una con sus fortalezas y casos de uso ideales.</p>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fab fa-node-js" style="color: var(--backend-color);"></i> Node.js</h4>
+                            <p>Entorno de ejecución JavaScript del lado del servidor. Ideal para APIs rápidas y aplicaciones en tiempo real.</p>
+                            <p><strong>Frameworks populares:</strong> Express, NestJS, Fastify</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fab fa-python" style="color: var(--backend-color);"></i> Python</h4>
+                            <p>Lenguaje versátil con sintaxis clara. Excelente para ciencia de datos y aplicaciones web.</p>
+                            <p><strong>Frameworks populares:</strong> Django, Flask, FastAPI</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fab fa-java" style="color: var(--backend-color);"></i> Java</h4>
+                            <p>Lenguaje robusto y tipado, usado en aplicaciones empresariales complejas.</p>
+                            <p><strong>Frameworks populares:</strong> Spring Boot, Jakarta EE, Micronaut</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-gem" style="color: var(--backend-color);"></i> Ruby</h4>
+                            <p>Lenguaje elegante y productivo, conocido por el framework Ruby on Rails.</p>
+                            <p><strong>Frameworks populares:</strong> Ruby on Rails, Sinatra</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-database" style="color: var(--backend-color);"></i> Bases de Datos</h4>
+                            <p>Sistemas de almacenamiento para persistir datos de la aplicación.</p>
+                            <p><strong>Opciones populares:</strong> PostgreSQL, MySQL, MongoDB, Redis</p>
+                        </div>
+                        
+                        <h3>Comparación de tecnologías backend</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Tecnología</th>
+                                    <th>Ventajas</th>
+                                    <th>Casos de Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Node.js</td>
+                                    <td>Alto rendimiento, mismo lenguaje que frontend, gran ecosistema</td>
+                                    <td>APIs, aplicaciones en tiempo real, microservicios</td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>Sintaxis clara, versátil, buenos frameworks</td>
+                                    <td>APIs, ciencia de datos, machine learning</td>
+                                </tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>Robusto, tipado fuerte, buen rendimiento</td>
+                                    <td>Aplicaciones empresariales, sistemas complejos</td>
+                                </tr>
+                                <tr>
+                                    <td>Ruby</td>
+                                    <td>Muy productivo, convención sobre configuración</td>
+                                    <td>Prototipos rápidos, aplicaciones web tradicionales</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    
+                    <!-- SECCIÓN PATRONES DE DISEÑO BACKEND -->
+                    <article id="backend-patrones" class="architecture-section backend-section">
+                        <h2 class="section-title backend-title"><i class="fas fa-server"></i> Patrones de Diseño Backend</h2>
+                        
+                        <p>Los patrones de diseño proporcionan soluciones probadas a problemas comunes en el desarrollo de software.</p>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-layer-group" style="color: var(--backend-color);"></i> MVC (Modelo-Vista-Controlador)</h4>
+                            <p>Separa la lógica en tres componentes: Modelo (datos), Vista (interfaz) y Controlador (lógica).</p>
+                            <p><strong>Uso:</strong> Aplicaciones web tradicionales</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-project-diagram" style="color: var(--backend-color);"></i> Repository Pattern</h4>
+                            <p>Abstracción de la capa de acceso a datos, haciendo el código más mantenible y testeable.</p>
+                            <p><strong>Uso:</strong> Aplicaciones con bases de datos complejas</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-exchange-alt" style="color: var(--backend-color);"></i> CQRS (Command Query Responsibility Segregation)</h4>
+                            <p>Separa las operaciones de lectura (Query) y escritura (Command) en modelos diferentes.</p>
+                            <p><strong>Uso:</strong> Sistemas con alta escalabilidad requerida</p>
+                        </div>
+                        
+                        <div class="tech-card backend-tech">
+                            <h4><i class="fas fa-plug" style="color: var(--backend-color);"></i> Inyección de Dependencias</h4>
+                            <p>Provee las dependencias que un componente necesita desde el exterior.</p>
+                            <p><strong>Uso:</strong> Cualquier aplicación que requiera código testeable y desacoplado</p>
+                        </div>
+                        
+                        <h3>Arquitectura Hexagonal (Ports & Adapters)</h3>
+                        <p>Patrón que separa la lógica de negocio del resto de la aplicación, haciendo que no dependa de frameworks o bases de datos específicas.</p>
+                        
+                        <div class="code-block">
+                            <span class="comment">// Estructura típica</span>
+                            <span class="folder">/src</span>
+                            <span class="folder">│   /core</span>           <span class="comment"># Lógica de negocio pura</span>
+                            <span class="folder">│   /infrastructure</span> <span class="comment"># Implementaciones concretas (BD, APIs externas)</span>
+                            <span class="folder">│   /application</span>    <span class="comment"># Casos de uso, orquestación</span>
+                            <span class="folder">│   /interfaces</span>     <span class="comment"># Controladores, APIs, CLI</span>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Beneficios:</strong> La lógica de negocio permanece aislada y es fácil de testear. Se pueden cambiar tecnologías externas sin afectar el núcleo.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN ESTRUCTURA FRONTEND -->
+                    <article id="frontend-estructura" class="architecture-section frontend-section">
+                        <h2 class="section-title frontend-title"><i class="fas fa-laptop-code"></i> Estructura de Proyectos Frontend</h2>
+                        
+                        <p>La estructura frontend ha evolucionado significativamente con la llegada de frameworks modernos y aplicaciones de una sola página (SPA).</p>
+                        
+                        <h3>Estructura para proyecto React</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/public</div>
+                            <div class="file">│   index.html</div>
+                            <div class="file">│   favicon.ico</div>
+                            <div class="folder">/src</div>
+                            <div class="folder">│   /assets</div>
+                            <div class="file">│   │   styles/global.css</div>
+                            <div class="file">│   │   images/logo.png</div>
+                            <div class="folder">│   /components</div>
+                            <div class="file">│   │   Button/Button.jsx</div>
+                            <div class="file">│   │   Button/Button.module.css</div>
+                            <div class="file">│   │   Button/index.js</div>
+                            <div class="folder">│   /pages</div>
+                            <div class="file">│   │   Home/Home.jsx</div>
+                            <div class="file">│   │   Home/Home.module.css</div>
+                            <div class="folder">│   /context</div>
+                            <div class="file">│   │   AuthContext.js</div>
+                            <div class="folder">│   /hooks</div>
+                            <div class="file">│   │   useFetch.js</div>
+                            <div class="folder">│   /services</div>
+                            <div class="file">│   │   api.js</div>
+                            <div class="file">│   │   authService.js</div>
+                            <div class="folder">│   /utils</div>
+                            <div class="file">│   │   helpers.js</div>
+                            <div class="file">│   App.jsx</div>
+                            <div class="file">│   App.css</div>
+                            <div class="file">│   index.js</div>
+                            <div class="file">package.json</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        
+                        <h3>Estructura para proyecto Vue.js</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/public</div>
+                            <div class="file">│   index.html</div>
+                            <div class="folder">/src</div>
+                            <div class="folder">│   /assets</div>
+                            <div class="file">│   │   main.css</div>
+                            <div class="file">│   │   logo.png</div>
+                            <div class="folder">│   /components</div>
+                            <div class="file">│   │   Button.vue</div>
+                            <div class="file">│   │   Card.vue</div>
+                            <div class="folder">│   /views</div>
+                            <div class="file">│   │   Home.vue</div>
+                            <div class="file">│   │   About.vue</div>
+                            <div class="folder">│   /router</div>
+                            <div class="file">│   │   index.js</div>
+                            <div class="folder">│   /store</div>
+                            <div class="file">│   │   index.js</div>
+                            <div class="file">│   App.vue</div>
+                            <div class="file">│   main.js</div>
+                            <div class="file">package.json</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        
+                        <h3>Explicación de directorios clave</h3>
+                        <ul>
+                            <li><strong>public/</strong>: Archivos estáticos que no pasan por el bundler</li>
+                            <li><strong>src/assets/</strong>: Recursos estáticos como imágenes, fuentes y estilos globales</li>
+                            <li><strong>src/components/</strong>: Componentes reutilizables de UI</li>
+                            <li><strong>src/pages/</strong> o <strong>src/views/</strong>: Componentes que representan páginas completas</li>
+                            <li><strong>src/services/</strong>: Lógica para interactuar con APIs externas</li>
+                            <li><strong>src/utils/</strong>: Funciones auxiliares reutilizables</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            <p><strong>Importante:</strong> Evita anidar demasiado los componentes. Una estructura plana suele ser más mantenible que una profundamente anidada.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN TECNOLOGÍAS FRONTEND -->
+                    <article id="frontend-tecnologias" class="architecture-section frontend-section">
+                        <h2 class="section-title frontend-title"><i class="fas fa-laptop-code"></i> Tecnologías Frontend</h2>
+                        
+                        <p>El ecosistema frontend moderno ofrece múltiples opciones para construir interfaces de usuario.</p>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fab fa-react" style="color: var(--frontend-color);"></i> React</h4>
+                            <p>Biblioteca de JavaScript para construir interfaces de usuario. Basada en componentes.</p>
+                            <p><strong>Ecosistema:</strong> Redux, React Router, Next.js</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fab fa-vuejs" style="color: var(--frontend-color);"></i> Vue.js</h4>
+                            <p>Framework progresivo para construir UIs. Más opinado que React pero menos que Angular.</p>
+                            <p><strong>Ecosistema:</strong> Vuex, Vue Router, Nuxt.js</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fab fa-angular" style="color: var(--frontend-color);"></i> Angular</h4>
+                            <p>Framework completo basado en TypeScript. Ideal para aplicaciones empresariales.</p>
+                            <p><strong>Ecosistema:</strong> RxJS, NgRx, Angular Material</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fab fa-js" style="color: var(--frontend-color);"></i> Svelte</h4>
+                            <p>Enfoque innovador que compila a JavaScript vanilla. Sin Virtual DOM.</p>
+                            <p><strong>Ecosistema:</strong> SvelteKit, Svelte Native</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fas fa-tools" style="color: var(--frontend-color);"></i> Herramientas</h4>
+                            <p>Utilidades esenciales para el desarrollo frontend moderno.</p>
+                            <p><strong>Opciones:</strong> Webpack, Vite, Babel, ESLint, Prettier</p>
+                        </div>
+                        
+                        <h3>Comparación de frameworks frontend</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Framework</th>
+                                    <th>Ventajas</th>
+                                    <th>Casos de Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>React</td>
+                                    <td>Flexible, gran ecosistema, alto rendimiento</td>
+                                    <td>SPAs complejas, aplicaciones dinámicas</td>
+                                </tr>
+                                <tr>
+                                    <td>Vue.js</td>
+                                    <td>Fácil aprendizaje, documentación excelente</td>
+                                    <td>Prototipos rápidos, aplicaciones medianas</td>
+                                </tr>
+                                <tr>
+                                    <td>Angular</td>
+                                    <td>Estructura clara, todo incluido, TypeScript</td>
+                                    <td>Aplicaciones empresariales grandes</td>
+                                </tr>
+                                <tr>
+                                    <td>Svelte</td>
+                                    <td>Sin Virtual DOM, código más conciso</td>
+                                    <td>Aplicaciones pequeñas-medianas, alto rendimiento</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    
+                    <!-- SECCIÓN ARQUITECTURAS FRONTEND -->
+                    <article id="frontend-arquitecturas" class="architecture-section frontend-section">
+                        <h2 class="section-title frontend-title"><i class="fas fa-laptop-code"></i> Arquitecturas Frontend Modernas</h2>
+                        
+                        <p>Las aplicaciones frontend complejas requieren arquitecturas que manejen el estado y la lógica de manera escalable.</p>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fas fa-atom" style="color: var(--frontend-color);"></i> Atomic Design</h4>
+                            <p>Metodología para crear sistemas de diseño basada en componentes atómicos.</p>
+                            <p><strong>Niveles:</strong> Átomos, Moléculas, Organismos, Plantillas, Páginas</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fas fa-boxes" style="color: var(--frontend-color);"></i> Component-Based Architecture</h4>
+                            <p>Estructura la aplicación como árbol de componentes reutilizables.</p>
+                            <p><strong>Ventajas:</strong> Reutilización, encapsulación, facilidad de mantenimiento</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fas fa-project-diagram" style="color: var(--frontend-color);"></i> Flux Architecture</h4>
+                            <p>Patrón unidireccional para manejo de estado. Implementado por Redux.</p>
+                            <p><strong>Conceptos:</strong> Acciones, Reducers, Store, Dispatcher</p>
+                        </div>
+                        
+                        <div class="tech-card frontend-tech">
+                            <h4><i class="fas fa-microchip" style="color: var(--frontend-color);"></i> Micro Frontends</h4>
+                            <p>Extensión de microservicios al frontend. Aplicación como composición de features independientes.</p>
+                            <p><strong>Implementaciones:</strong> Module Federation, iframes, Web Components</p>
+                        </div>
+                        
+                        <h3>Ejemplo: Estructura de Feature Folders</h3>
+                        <p>Organiza el código por características/funcionalidades en lugar de por tipo de archivo.</p>
+                        
+                        <div class="folder-structure">
+                            <div class="folder">/src</div>
+                            <div class="folder">│   /features</div>
+                            <div class="folder">│   │   /auth</div>
+                            <div class="file">│   │   │   AuthForm.jsx</div>
+                            <div class="file">│   │   │   authAPI.js</div>
+                            <div class="file">│   │   │   authSlice.js</div>
+                            <div class="file">│   │   │   auth.test.js</div>
+                            <div class="folder">│   │   /products</div>
+                            <div class="file">│   │   │   ProductList.jsx</div>
+                            <div class="file">│   │   │   ProductDetail.jsx</div>
+                            <div class="file">│   │   │   productsAPI.js</div>
+                            <div class="file">│   │   │   productsSlice.js</div>
+                            <div class="folder">│   /shared</div>
+                            <div class="file">│   │   Button.jsx</div>
+                            <div class="file">│   │   Input.jsx</div>
+                            <div class="file">│   App.jsx</div>
+                            <div class="file">│   store.js</div>
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Beneficio:</strong> Todo relacionado con una característica está en un solo lugar, haciendo más fácil la navegación y el mantenimiento.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN PROYECTOS FULLSTACK -->
+                    <article id="fullstack-estructura" class="architecture-section fullstack-section">
+                        <h2 class="section-title fullstack-title"><i class="fas fa-code"></i> Estructura de Proyectos Fullstack</h2>
+                        
+                        <p>Los proyectos fullstack combinan backend y frontend en una sola codebase. Existen varios enfoques para organizarlos.</p>
+                        
+                        <h3>Opción 1: Repositorios separados</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/frontend</div>
+                            <div class="file">│   (Todo el código frontend)</div>
+                            <div class="folder">/backend</div>
+                            <div class="file">│   (Todo el código backend)</div>
+                        </div>
+                        <p><strong>Ventajas:</strong> Separación clara, puede desplegarse por separado</p>
+                        <p><strong>Desventajas:</strong> Más complejo coordinar cambios que afectan ambos lados</p>
+                        
+                        <h3>Opción 2: Mono-repositorio</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/packages</div>
+                            <div class="folder">│   /api</div>
+                            <div class="file">│   │   (Código backend)</div>
+                            <div class="folder">│   /web</div>
+                            <div class="file">│   │   (Código frontend)</div>
+                            <div class="folder">│   /shared</div>
+                            <div class="file">│   │   (Código compartido)</div>
+                            <div class="file">package.json</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        <p><strong>Ventajas:</strong> Fácil compartir código, cambios coordinados</p>
+                        <p><strong>Desventajas:</strong> Configuración más compleja, herramientas especializadas necesarias</p>
+                        
+                        <h3>Ejemplo con Next.js (Fullstack en JavaScript)</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/pages</div>
+                            <div class="file">│   index.js</div>
+                            <div class="file">│   api/hello.js</div>
+                            <div class="folder">/public</div>
+                            <div class="folder">/src</div>
+                            <div class="folder">│   /components</div>
+                            <div class="folder">│   /lib</div>
+                            <div class="file">│   │   api.js</div>
+                            <div class="file">│   │   auth.js</div>
+                            <div class="folder">│   /styles</div>
+                            <div class="file">next.config.js</div>
+                            <div class="file">package.json</div>
+                        </div>
+                        <p>Next.js permite crear endpoints API dentro del proyecto frontend usando la carpeta <code>pages/api</code>.</p>
+                        
+                        <div class="note">
+                            <p><strong>Consideración:</strong> Para proyectos grandes, es mejor separar backend y frontend. Next.js es ideal para aplicaciones medianas o cuando se quiere simplificar la infraestructura.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MICROSERVICIOS -->
+                    <article id="microservicios" class="architecture-section backend-section">
+                        <h2 class="section-title backend-title"><i class="fas fa-network-wired"></i> Arquitectura de Microservicios</h2>
+                        
+                        <p>Los microservicios son un enfoque arquitectónico donde la aplicación se compone de servicios pequeños e independientes.</p>
+                        
+                        <h3>Estructura típica</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/services</div>
+                            <div class="folder">│   /user-service</div>
+                            <div class="file">│   │   (Código completo para servicio de usuarios)</div>
+                            <div class="folder">│   /product-service</div>
+                            <div class="file">│   │   (Código completo para servicio de productos)</div>
+                            <div class="folder">│   /order-service</div>
+                            <div class="file">│   │   (Código completo para servicio de pedidos)</div>
+                            <div class="folder">│   /api-gateway</div>
+                            <div class="file">│   │   (Punto de entrada unificado)</div>
+                            <div class="file">docker-compose.yml</div>
+                            <div class="file">README.md</div>
+                        </div>
+                        
+                        <h3>Características clave</h3>
+                        <ul>
+                            <li><strong>Autónomos:</strong> Cada servicio tiene su propia base de datos y lógica</li>
+                            <li><strong>Especializados:</strong> Cada servicio hace una cosa bien</li>
+                            <li><strong>Independientes:</strong> Pueden desplegarse y escalarse por separado</li>
+                            <li><strong>Comunicación:</strong> Usan APIs REST, gRPC o mensajería (RabbitMQ, Kafka)</li>
+                        </ul>
+                        
+                        <h3>Ventajas vs Monolito</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspecto</th>
+                                    <th>Microservicios</th>
+                                    <th>Monolito</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Escalabilidad</td>
+                                    <td>Escala por servicios individuales</td>
+                                    <td>Escala toda la aplicación</td>
+                                </tr>
+                                <tr>
+                                    <td>Despliegue</td>
+                                    <td>Despliegues independientes</td>
+                                    <td>Despliegue único</td>
+                                </tr>
+                                <tr>
+                                    <td>Complejidad</td>
+                                    <td>Alta (orquestación, red)</td>
+                                    <td>Baja (todo en un lugar)</td>
+                                </tr>
+                                <tr>
+                                    <td>Tecnologías</td>
+                                    <td>Mezcla de lenguajes/frameworks</td>
+                                    <td>Único stack tecnológico</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="warning">
+                            <p><strong>Advertencia:</strong> Los microservicios añaden complejidad operacional. Solo deben usarse cuando el monolito realmente se queda corto.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MONOREPO -->
+                    <article id="monorepo" class="architecture-section fullstack-section">
+                        <h2 class="section-title fullstack-title"><i class="fas fa-code-branch"></i> Monorepositorios (Monorepo)</h2>
+                        
+                        <p>Un monorepo alberga múltiples proyectos o componentes en un solo repositorio.</p>
+                        
+                        <h3>Estructura típica</h3>
+                        <div class="folder-structure">
+                            <div class="folder">/apps</div>
+                            <div class="file">│   /web-app</div>
+                            <div class="file">│   /mobile-app</div>
+                            <div class="file">│   /admin-panel</div>
+                            <div class="folder">/packages</div>
+                            <div class="file">│   /shared-ui</div>
+                            <div class="file">│   /api-client</div>
+                            <div class="file">│   /utils</div>
+                            <div class="folder">/services</div>
+                            <div class="file">│   /auth-service</div>
+                            <div class="file">│   /payment-service</div>
+                            <div class="file">package.json</div>
+                            <div class="file">lerna.json</div>
+                            <div class="file">nx.json</div>
+                        </div>
+                        
+                        <h3>Herramientas para monorepos</h3>
+                        <ul>
+                            <li><strong>Lerna:</strong> Gestión de paquetes y ejecución de comandos</li>
+                            <li><strong>Nx:</strong> Kit de herramientas para monorepos con caching inteligente</li>
+                            <li><strong>Yarn Workspaces / pnpm Workspaces:</strong> Manejo de dependencias</li>
+                            <li><strong>Turborepo:</strong> Sistema de build de alto rendimiento</li>
+                        </ul>
+                        
+                        <h3>Ventajas</h3>
+                        <ul>
+                            <li><strong>Reutilización de código:</strong> Comparte fácilmente librerías entre proyectos</li>
+                            <li><strong>Refactorización:</strong> Cambios que afectan múltiples proyectos son más fáciles</li>
+                            <li><strong>Consistencia:</strong> Todos los proyectos usan las mismas versiones de dependencias</li>
+                            <li><strong>Visibilidad:</strong> Todo el código está en un lugar centralizado</li>
+                        </ul>
+                        
+                        <h3>Desventajas</h3>
+                        <ul>
+                            <li><strong>Rendimiento:</strong> Operaciones pueden ser más lentas con muchos paquetes</li>
+                            <li><strong>Complejidad:</strong> Configuración más avanzada requerida</li>
+                            <li><strong>Control de acceso:</strong> Más difícil restringir acceso a partes específicas</li>
+                        </ul>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Los monorepos son ideales para equipos que mantienen múltiples proyectos interdependientes o librerías compartidas.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MEJORES PRÁCTICAS -->
+                    <article id="mejores-practicas" class="architecture-section fullstack-section">
+                        <h2 class="section-title fullstack-title"><i class="fas fa-check-circle"></i> Mejores Prácticas</h2>
+                        
+                        <p>Independientemente de la estructura que elijas, estas prácticas mejorarán la calidad de tu proyecto.</p>
+                        
+                        <h3>General</h3>
+                        <ul>
+                            <li><strong>README claro:</strong> Documenta propósito, instalación y uso del proyecto</li>
+                            <li><strong>.gitignore:</strong> Excluye archivos generados y sensibles</li>
+                            <li><strong>Variables de entorno:</strong> Nunca hardcodees credenciales o configuraciones sensibles</li>
+                            <li><strong>Linting y formateo:</strong> Usa ESLint, Prettier o herramientas similares</li>
+                            <li><strong>Testing:</strong> Incluye pruebas unitarias e integrales desde el inicio</li>
+                        </ul>
+                        
+                        <h3>Backend</h3>
+                        <ul>
+                            <li><strong>Validación de entrada:</strong> Valida siempre los datos que llegan a tu API</li>
+                            <li><strong>Manejo de errores:</strong> Implementa middleware centralizado para errores</li>
+                            <li><strong>Logging:</strong> Registra eventos importantes para diagnóstico</li>
+                            <li><strong>Seguridad:</strong> Implementa autenticación, autorización y sanitización</li>
+                            <li><strong>Health checks:</strong> Endpoints para monitoreo del servicio</li>
+                        </ul>
+                        
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li><strong>Componentes reutilizables:</strong> Extrae UI común a componentes independientes</li>
+                            <li><strong>Manejo de estado:</strong> Elige una solución apropiada para la complejidad de tu app</li>
+                            <li><strong>Optimización:</strong> Code splitting, lazy loading, bundling eficiente</li>
+                            <li><strong>Accesibilidad:</strong> Sigue estándares WCAG desde el diseño</li>
+                            <li><strong>Responsive design:</strong> Prueba en múltiples tamaños de pantalla</li>
+                        </ul>
+                        
+                        <h3>Estructura de commits</h3>
+                        <p>Usa convenciones como Conventional Commits para mensajes claros:</p>
+                        <div class="code-block">
+                            <span class="keyword">feat</span>: add user profile page<br>
+                            <span class="keyword">fix</span>: resolve login form validation<br>
+                            <span class="keyword">docs</span>: update installation guide<br>
+                            <span class="keyword">refactor</span>: simplify authentication middleware<br>
+                            <span class="keyword">chore</span>: update dependencies<br>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Automatización:</strong> Configura CI/CD (GitHub Actions, GitLab CI, Jenkins) para ejecutar tests, builds y despliegues automáticos.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN RECURSOS -->
+                    <article id="recursos" class="architecture-section">
+                        <h2 class="section-title"><i class="fas fa-book"></i> Recursos Adicionales</h2>
+                        
+                        <h3>Documentación oficial</h3>
+                        <ul>
+                            <li><a href="https://12factor.net/" target="_blank">The Twelve-Factor App</a> - Metodología para construir apps SaaS</li>
+                            <li><a href="https://microservices.io/" target="_blank">Microservices Patterns</a> - Patrones para arquitectura de microservicios</li>
+                            <li><a href="https://nx.dev/" target="_blank">Nx Documentation</a> - Herramienta para monorepos</li>
+                        </ul>
+                        
+                        <h3>Libros recomendados</h3>
+                        <ul>
+                            <li>"Clean Architecture" - Robert C. Martin</li>
+                            <li>"Designing Data-Intensive Applications" - Martin Kleppmann</li>
+                            <li>"Building Microservices" - Sam Newman</li>
+                            <li>"Domain-Driven Design" - Eric Evans</li>
+                        </ul>
+                        
+                        <h3>Herramientas útiles</h3>
+                        <ul>
+                            <li><a href="https://www.docker.com/" target="_blank">Docker</a> - Contenedores para desarrollo consistente</li>
+                            <li><a href="https://kubernetes.io/" target="_blank">Kubernetes</a> - Orquestación de contenedores</li>
+                            <li><a href="https://www.postman.com/" target="_blank">Postman</a> - Pruebas de APIs</li>
+                            <li><a href="https://swagger.io/" target="_blank">Swagger/OpenAPI</a> - Documentación de APIs</li>
+                        </ul>
+                    </article>
+                    
+                    <div class="guide-download">
+                        <h3>¿Quieres esta guía en formato PDF?</h3>
+                        <p>Descarga la versión completa con todos los ejemplos y referencias.</p>
+                        <a href="#" class="btn"><i class="fas fa-download"></i> Descargar Guía Completa</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../index.html#guias">Guías</a></li>
+                        <li><a href="../index.html#descargas">Descargas</a></li>
+                        <li><a href="../index.html#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
