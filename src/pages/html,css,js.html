@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS y JS - Guía para Programadores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/src/css/html,css,js.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="../index.html#guias">Guías</a></li>
+                    <li><a href="../index.html#descargas">Descargas</a></li>
+                    <li><a href="../index.html#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">            
+            <div class="guide-title">
+                <div class="tech-icons">
+                    <img src="../images/html-icon.png" alt="HTML" class="tech-icon">
+                    <img src="../images/css-icon.png" alt="CSS" class="tech-icon">
+                    <img src="../images/js-icon.png" alt="JavaScript" class="tech-icon">
+                </div>
+                <h1>Guía Completa de Desarrollo Web</h1>
+                <p class="guide-description">Domina los fundamentos del desarrollo frontend con HTML, CSS y JavaScript</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion" class="html-link">Introducción</a></li>
+                        <li><a href="#html-basico" class="html-link">HTML Básico</a></li>
+                        <li><a href="#html5" class="html-link">HTML5 Semántico</a></li>
+                        <li><a href="#formularios" class="html-link">Formularios HTML</a></li>
+                        <li><a href="#css-basico" class="css-link">CSS Básico</a></li>
+                        <li><a href="#css-layout" class="css-link">Diseño con CSS</a></li>
+                        <li><a href="#css3" class="css-link">CSS3 Avanzado</a></li>
+                        <li><a href="#responsive" class="css-link">Diseño Responsive</a></li>
+                        <li><a href="#js-basico" class="js-link">JavaScript Básico</a></li>
+                        <li><a href="#dom" class="js-link">Manipulación del DOM</a></li>
+                        <li><a href="#es6" class="js-link">ES6+ Moderno</a></li>
+                        <li><a href="#recursos" class="html-link">Recursos Adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion" class="tech-section">
+                        <h2 class="section-title"><i class="fab fa-html5" style="color: var(--html-color);"></i> <i class="fab fa-css3-alt" style="color: var(--css-color);"></i> <i class="fab fa-js" style="color: var(--js-color);"></i> Introducción al Desarrollo Web</h2>
+                        <p>El desarrollo web frontend se compone de tres tecnologías fundamentales que trabajan juntas:</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card html-feature">
+                                <h4><i class="fab fa-html5" style="color: var(--html-color);"></i> HTML</h4>
+                                <p>Lenguaje de marcado para estructurar el contenido de las páginas web.</p>
+                                <p><strong>Versión actual:</strong> HTML5</p>
+                            </div>
+                            
+                            <div class="feature-card css-feature">
+                                <h4><i class="fab fa-css3-alt" style="color: var(--css-color);"></i> CSS</h4>
+                                <p>Lenguaje de estilos para definir la presentación visual del contenido HTML.</p>
+                                <p><strong>Versión actual:</strong> CSS3</p>
+                            </div>
+                            
+                            <div class="feature-card js-feature">
+                                <h4><i class="fab fa-js" style="color: var(--js-color);"></i> JavaScript</h4>
+                                <p>Lenguaje de programación para añadir interactividad y comportamiento dinámico.</p>
+                                <p><strong>Versión actual:</strong> ECMAScript 2022</p>
+                            </div>
+                        </div>
+                        
+                        <h3>¿Cómo trabajan juntas?</h3>
+                        <div class="note">
+                            <p><strong>HTML</strong> es como la estructura de una casa (paredes, techos), <strong>CSS</strong> es la decoración y pintura, y <strong>JavaScript</strong> es la electricidad y sistemas que hacen la casa funcional.</p>
+                        </div>
+                        
+                        <h3>Evolución de las tecnologías web</h3>
+                        <div class="version-timeline">
+                            <div class="version-item">
+                                <div class="version-year">1991</div>
+                                <div class="version-desc">Tim Berners-Lee crea HTML</div>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-year">1996</div>
+                                <div class="version-desc">Aparece CSS</div>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-year">1997</div>
+                                <div class="version-desc">JavaScript se estandariza como ECMAScript</div>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-year">2014</div>
+                                <div class="version-desc">HTML5 y CSS3 se completan</div>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-year">2015</div>
+                                <div class="version-desc">ES6 (gran actualización de JavaScript)</div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN HTML BÁSICO -->
+                    <article id="html-basico" class="tech-section html-section">
+                        <h2 class="section-title html-title"><i class="fab fa-html5"></i> HTML Básico</h2>
+                        
+                        <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Define la estructura y el significado del contenido.</p>
+                        
+                        <h3>Estructura básica de un documento HTML</h3>
+                        <div class="code-block">
+                            <span class="html-tag">&lt;!DOCTYPE html&gt;</span><br>
+                            <span class="html-tag">&lt;html</span> <span class="html-attr">lang</span>=<span class="html-value">"es"</span><span class="html-tag">&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;head&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;meta</span> <span class="html-attr">charset</span>=<span class="html-value">"UTF-8"</span><span class="html-tag">&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;meta</span> <span class="html-attr">name</span>=<span class="html-value">"viewport"</span> <span class="html-attr">content</span>=<span class="html-value">"width=device-width, initial-scale=1.0"</span><span class="html-tag">&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;title&gt;</span>Mi Página<span class="html-tag">&lt;/title&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;/head&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;body&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;h1&gt;</span>Mi Primer Título<span class="html-tag">&lt;/h1&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;p&gt;</span>Mi primer párrafo.<span class="html-tag">&lt;/p&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;/body&gt;</span><br>
+                            <span class="html-tag">&lt;/html&gt;</span>
+                        </div>
+                        
+                        <h3>Elementos HTML esenciales</h3>
+                        <div class="example-container">
+                            <div class="example-box">
+                                <div class="example-header html-header">Ejemplo HTML</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="html-tag">&lt;h1&gt;</span>Título principal<span class="html-tag">&lt;/h1&gt;</span><br>
+                                        <span class="html-tag">&lt;h2&gt;</span>Subtítulo<span class="html-tag">&lt;/h2&gt;</span><br>
+                                        <span class="html-tag">&lt;p&gt;</span>Párrafo de texto.<span class="html-tag">&lt;/p&gt;</span><br>
+                                        <span class="html-tag">&lt;a</span> <span class="html-attr">href</span>=<span class="html-value">"https://ejemplo.com"</span><span class="html-tag">&gt;</span>Enlace<span class="html-tag">&lt;/a&gt;</span><br>
+                                        <span class="html-tag">&lt;img</span> <span class="html-attr">src</span>=<span class="html-value">"imagen.jpg"</span> <span class="html-attr">alt</span>=<span class="html-value">"Descripción"</span><span class="html-tag">&gt;</span><br>
+                                        <span class="html-tag">&lt;ul&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Item 1<span class="html-tag">&lt;/li&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Item 2<span class="html-tag">&lt;/li&gt;</span><br>
+                                        <span class="html-tag">&lt;/ul&gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <div class="example-header html-header">Resultado en navegador</div>
+                                <div class="example-content">
+                                    <div class="browser-result">
+                                        <h4>Resultado:</h4>
+                                        <h1 style="margin: 0.5rem 0; font-size: 2em;">Título principal</h1>
+                                        <h2 style="margin: 0.5rem 0; font-size: 1.5em;">Subtítulo</h2>
+                                        <p>Párrafo de texto.</p>
+                                        <p><a href="#" style="color: #0066cc;">Enlace</a></p>
+                                        <div style="width: 100%; height: 100px; background: #eee; display: flex; align-items: center; justify-content: center; color: #666;">[Imagen]</div>
+                                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Importante:</strong> Todos los elementos HTML deben tener etiquetas de apertura y cierre (ej: <code>&lt;p&gt;&lt;/p&gt;</code>), excepto los elementos vacíos como <code>&lt;img&gt;</code> que se cierran con <code>/&gt;</code> en XHTML.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN HTML5 SEMÁNTICO -->
+                    <article id="html5" class="tech-section html-section">
+                        <h2 class="section-title html-title"><i class="fab fa-html5"></i> HTML5 Semántico</h2>
+                        
+                        <p>HTML5 introdujo elementos semánticos que describen mejor el significado del contenido, ayudando a los motores de búsqueda y tecnologías de accesibilidad.</p>
+                        
+                        <h3>Estructura semántica típica</h3>
+                        <div class="code-block">
+                            <span class="html-tag">&lt;header&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-comment">&lt;!-- Logo, navegación principal --&gt;</span><br>
+                            <span class="html-tag">&lt;/header&gt;</span><br>
+                            <span class="html-tag">&lt;nav&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-comment">&lt;!-- Menús de navegación --&gt;</span><br>
+                            <span class="html-tag">&lt;/nav&gt;</span><br>
+                            <span class="html-tag">&lt;main&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;article&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-comment">&lt;!-- Contenido independiente --&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;/article&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;aside&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="html-comment">&lt;!-- Contenido relacionado --&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-tag">&lt;/aside&gt;</span><br>
+                            <span class="html-tag">&lt;/main&gt;</span><br>
+                            <span class="html-tag">&lt;footer&gt;</span><br>
+                            &nbsp;&nbsp;<span class="html-comment">&lt;!-- Información de pie --&gt;</span><br>
+                            <span class="html-tag">&lt;/footer&gt;</span>
+                        </div>
+                        
+                        <h3>Elementos semánticos clave</h3>
+                        <ul>
+                            <li><strong>&lt;header&gt;</strong>: Cabecera de la página o sección</li>
+                            <li><strong>&lt;nav&gt;</strong>: Bloque de enlaces de navegación</li>
+                            <li><strong>&lt;main&gt;</strong>: Contenido principal único en la página</li>
+                            <li><strong>&lt;article&gt;</strong>: Contenido independiente (post, noticia)</li>
+                            <li><strong>&lt;section&gt;</strong>: Sección temática de contenido</li>
+                            <li><strong>&lt;aside&gt;</strong>: Contenido relacionado indirectamente</li>
+                            <li><strong>&lt;footer&gt;</strong>: Pie de página o sección</li>
+                            <li><strong>&lt;figure&gt; y &lt;figcaption&gt;</strong>: Para imágenes con descripción</li>
+                        </ul>
+                        
+                        <div class="tip">
+                            <p><strong>SEO Tip:</strong> Usar elementos semánticos correctamente puede mejorar el posicionamiento en buscadores, ya que ayudan a los robots a entender la estructura de tu contenido.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN FORMULARIOS HTML -->
+                    <article id="formularios" class="tech-section html-section">
+                        <h2 class="section-title html-title"><i class="fab fa-html5"></i> Formularios HTML</h2>
+                        
+                        <p>Los formularios permiten a los usuarios interactuar con la página web, enviando datos al servidor.</p>
+                        
+                        <h3>Estructura básica de un formulario</h3>
+                        <div class="example-container">
+                            <div class="example-box">
+                                <div class="example-header html-header">Código HTML</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="html-tag">&lt;form</span> <span class="html-attr">action</span>=<span class="html-value">"/procesar"</span> <span class="html-attr">method</span>=<span class="html-value">"POST"</span><span class="html-tag">&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;label</span> <span class="html-attr">for</span>=<span class="html-value">"nombre"</span><span class="html-tag">&gt;</span>Nombre:<span class="html-tag">&lt;/label&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;input</span> <span class="html-attr">type</span>=<span class="html-value">"text"</span> <span class="html-attr">id</span>=<span class="html-value">"nombre"</span> <span class="html-attr">name</span>=<span class="html-value">"nombre"</span> <span class="html-attr">required</span><span class="html-tag">&gt;</span><br>
+                                        <br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;label</span> <span class="html-attr">for</span>=<span class="html-value">"email"</span><span class="html-tag">&gt;</span>Email:<span class="html-tag">&lt;/label&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;input</span> <span class="html-attr">type</span>=<span class="html-value">"email"</span> <span class="html-attr">id</span>=<span class="html-value">"email"</span> <span class="html-attr">name</span>=<span class="html-value">"email"</span> <span class="html-attr">required</span><span class="html-tag">&gt;</span><br>
+                                        <br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;label</span> <span class="html-attr">for</span>=<span class="html-value">"mensaje"</span><span class="html-tag">&gt;</span>Mensaje:<span class="html-tag">&lt;/label&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;textarea</span> <span class="html-attr">id</span>=<span class="html-value">"mensaje"</span> <span class="html-attr">name</span>=<span class="html-value">"mensaje"</span><span class="html-tag">&gt;</span><span class="html-tag">&lt;/textarea&gt;</span><br>
+                                        <br>
+                                        &nbsp;&nbsp;<span class="html-tag">&lt;button</span> <span class="html-attr">type</span>=<span class="html-value">"submit"</span><span class="html-tag">&gt;</span>Enviar<span class="html-tag">&lt;/button&gt;</span><br>
+                                        <span class="html-tag">&lt;/form&gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <div class="example-header html-header">Resultado</div>
+                                <div class="example-content">
+                                    <div class="browser-result">
+                                        <h4>Formulario de contacto:</h4>
+                                        <form style="display: grid; gap: 1rem; padding: 1rem 0;">
+                                            <label for="demo-nombre">Nombre:</label>
+                                            <input type="text" id="demo-nombre" required style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                                            
+                                            <label for="demo-email">Email:</label>
+                                            <input type="email" id="demo-email" required style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                                            
+                                            <label for="demo-mensaje">Mensaje:</label>
+                                            <textarea id="demo-mensaje" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; min-height: 100px;"></textarea>
+                                            
+                                            <button type="submit" style="padding: 0.5rem 1rem; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Tipos de inputs comunes</h3>
+                        <ul>
+                            <li><strong>text</strong>: Campo de texto básico</li>
+                            <li><strong>password</strong>: Para contraseñas (oculta texto)</li>
+                            <li><strong>email</strong>: Validación básica de email</li>
+                            <li><strong>number</strong>: Solo números</li>
+                            <li><strong>date</strong>: Selector de fecha</li>
+                            <li><strong>checkbox</strong>: Casillas de verificación</li>
+                            <li><strong>radio</strong>: Botones de opción única</li>
+                            <li><strong>file</strong>: Subida de archivos</li>
+                            <li><strong>submit</strong>: Botón de envío</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            <p><strong>Seguridad:</strong> Nunca confíes solo en la validación del lado del cliente. Siempre valida los datos en el servidor también.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN CSS BÁSICO -->
+                    <article id="css-basico" class="tech-section css-section">
+                        <h2 class="section-title css-title"><i class="fab fa-css3-alt"></i> CSS Básico</h2>
+                        
+                        <p>CSS (Cascading Style Sheets) es el lenguaje que controla el aspecto visual de los documentos HTML.</p>
+                        
+                        <h3>Sintaxis básica de CSS</h3>
+                        <div class="code-block">
+                            <span class="css-selector">selector</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">propiedad</span>: <span class="css-value">valor</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">otra-propiedad</span>: <span class="css-value">valor</span>;<br>
+                            }
+                        </div>
+                        
+                        <h3>Formas de aplicar CSS</h3>
+                        <div class="example-container">
+                            <div class="example-box">
+                                <div class="example-header css-header">Estilos en línea</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="html-tag">&lt;p</span> <span class="html-attr">style</span>=<span class="html-value">"color: red;"</span><span class="html-tag">&gt;</span><br>
+                                        &nbsp;&nbsp;Texto rojo<br>
+                                        <span class="html-tag">&lt;/p&gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <div class="example-header css-header">Estilos internos</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="html-tag">&lt;style&gt;</span><br>
+                                        p {<br>
+                                        &nbsp;&nbsp;color: red;<br>
+                                        }<br>
+                                        <span class="html-tag">&lt;/style&gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <div class="example-header css-header">Hoja de estilos externa</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="html-tag">&lt;link</span> <span class="html-attr">rel</span>=<span class="html-value">"stylesheet"</span> <span class="html-attr">href</span>=<span class="html-value">"estilos.css"</span><span class="html-tag">&gt;</span>
+                                    </div>
+                                    <p>Contenido de estilos.css:</p>
+                                    <div class="code-block">
+                                        p {<br>
+                                        &nbsp;&nbsp;color: red;<br>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Mejor práctica:</strong> Usa siempre hojas de estilo externas para separar el contenido de la presentación y facilitar el mantenimiento.</p>
+                        </div>
+                        
+                        <h3>Selectores básicos</h3>
+                        <div class="code-block">
+                            <span class="css-comment">/* Selector de elemento */</span><br>
+                            p {<br>
+                            &nbsp;&nbsp;<span class="css-property">color</span>: <span class="css-value">blue</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="css-comment">/* Selector de clase */</span><br>
+                            <span class="css-selector">.destacado</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">font-weight</span>: <span class="css-value">bold</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="css-comment">/* Selector de ID */</span><br>
+                            <span class="css-selector">#header</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">background</span>: <span class="css-value">#333</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="css-comment">/* Selector de atributo */</span><br>
+                            <span class="css-selector">input[type="text"]</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">border</span>: <span class="css-value">1px solid #ccc</span>;<br>
+                            }
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN CSS LAYOUT -->
+                    <article id="css-layout" class="tech-section css-section">
+                        <h2 class="section-title css-title"><i class="fab fa-css3-alt"></i> Diseño con CSS</h2>
+                        
+                        <p>CSS ofrece varios métodos para controlar el diseño y posicionamiento de elementos en la página.</p>
+                        
+                        <h3>Modelo de caja (Box Model)</h3>
+                        <div class="code-block">
+                            <span class="css-selector">.caja</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">width</span>: <span class="css-value">300px</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">height</span>: <span class="css-value">200px</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">padding</span>: <span class="css-value">20px</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">border</span>: <span class="css-value">5px solid black</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">margin</span>: <span class="css-value">30px</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">box-sizing</span>: <span class="css-value">border-box</span>; <span class="css-comment">/* Incluye padding y border en el width */</span><br>
+                            }
+                        </div>
+                        
+                        <h3>Sistemas de layout</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card css-feature">
+                                <h4><i class="fas fa-th"></i> Flexbox</h4>
+                                <p>Diseño unidimensional (filas o columnas) ideal para componentes y diseños pequeños.</p>
+                                <div class="code-block" style="font-size: 0.8em; margin-top: 0.5rem;">
+                                    <span class="css-selector">.contenedor</span> {<br>
+                                    &nbsp;&nbsp;<span class="css-property">display</span>: <span class="css-value">flex</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">justify-content</span>: <span class="css-value">center</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">align-items</span>: <span class="css-value">center</span>;<br>
+                                    }
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card css-feature">
+                                <h4><i class="fas fa-border-all"></i> CSS Grid</h4>
+                                <p>Sistema bidimensional (filas y columnas) para diseños complejos de página completa.</p>
+                                <div class="code-block" style="font-size: 0.8em; margin-top: 0.5rem;">
+                                    <span class="css-selector">.contenedor</span> {<br>
+                                    &nbsp;&nbsp;<span class="css-property">display</span>: <span class="css-value">grid</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">grid-template-columns</span>: <span class="css-value">1fr 2fr</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">gap</span>: <span class="css-value">20px</span>;<br>
+                                    }
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card css-feature">
+                                <h4><i class="fas fa-layer-group"></i> Position</h4>
+                                <p>Posicionamiento exacto de elementos (relative, absolute, fixed, sticky).</p>
+                                <div class="code-block" style="font-size: 0.8em; margin-top: 0.5rem;">
+                                    <span class="css-selector">.elemento</span> {<br>
+                                    &nbsp;&nbsp;<span class="css-property">position</span>: <span class="css-value">absolute</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">top</span>: <span class="css-value">20px</span>;<br>
+                                    &nbsp;&nbsp;<span class="css-property">left</span>: <span class="css-value">50%</span>;<br>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Usa Flexbox para componentes y diseños en una dimensión, y CSS Grid para layouts de página completa en dos dimensiones.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN CSS3 AVANZADO -->
+                    <article id="css3" class="tech-section css-section">
+                        <h2 class="section-title css-title"><i class="fab fa-css3-alt"></i> CSS3 Avanzado</h2>
+                        
+                        <p>CSS3 introdujo numerosas características avanzadas para crear diseños más sofisticados.</p>
+                        
+                        <h3>Animaciones y transiciones</h3>
+                        <div class="example-container">
+                            <div class="example-box">
+                                <div class="example-header css-header">Transición CSS</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="css-selector">.boton</span> {<br>
+                                        &nbsp;&nbsp;<span class="css-property">background</span>: <span class="css-value">blue</span>;<br>
+                                        &nbsp;&nbsp;<span class="css-property">transition</span>: <span class="css-value">background 0.3s ease</span>;<br>
+                                        }<br>
+                                        <br>
+                                        <span class="css-selector">.boton:hover</span> {<br>
+                                        &nbsp;&nbsp;<span class="css-property">background</span>: <span class="css-value">darkblue</span>;<br>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <div class="example-header css-header">Animación CSS</div>
+                                <div class="example-content">
+                                    <div class="code-block">
+                                        <span class="css-selector">@keyframes</span> desvanecer {<br>
+                                        &nbsp;&nbsp;<span class="css-keyword">from</span> { <span class="css-property">opacity</span>: <span class="css-value">0</span>; }<br>
+                                        &nbsp;&nbsp;<span class="css-keyword">to</span> { <span class="css-property">opacity</span>: <span class="css-value">1</span>; }<br>
+                                        }<br>
+                                        <br>
+                                        <span class="css-selector">.elemento</span> {<br>
+                                        &nbsp;&nbsp;<span class="css-property">animation</span>: <span class="css-value">desvanecer 2s infinite</span>;<br>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Transformaciones</h3>
+                        <div class="code-block">
+                            <span class="css-selector">.elemento</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">transform</span>: <span class="css-value">rotate(15deg) scale(1.1) translateX(20px)</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">transform-origin</span>: <span class="css-value">center center</span>;<br>
+                            }
+                        </div>
+                        
+                        <h3>Variables CSS (Custom Properties)</h3>
+                        <div class="code-block">
+                            <span class="css-selector">:root</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">--color-primario</span>: <span class="css-value">#3b82f6</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">--espaciado</span>: <span class="css-value">20px</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="css-selector">.elemento</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">color</span>: <span class="css-value">var(--color-primario)</span>;<br>
+                            &nbsp;&nbsp;<span class="css-property">padding</span>: <span class="css-value">var(--espaciado)</span>;<br>
+                            }
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN DISEÑO RESPONSIVE -->
+                    <article id="responsive" class="tech-section css-section">
+                        <h2 class="section-title css-title"><i class="fab fa-css3-alt"></i> Diseño Responsive</h2>
+                        
+                        <p>El diseño responsive permite que tus páginas se adapten a diferentes tamaños de pantalla.</p>
+                        
+                        <h3>Viewport meta tag</h3>
+                        <div class="code-block">
+                            <span class="html-tag">&lt;meta</span> <span class="html-attr">name</span>=<span class="html-value">"viewport"</span> <span class="html-attr">content</span>=<span class="html-value">"width=device-width, initial-scale=1.0"</span><span class="html-tag">&gt;</span>
+                        </div>
+                        
+                        <h3>Media Queries</h3>
+                        <div class="code-block">
+                            <span class="css-comment">/* Estilos base */</span><br>
+                            <span class="css-selector">.contenedor</span> {<br>
+                            &nbsp;&nbsp;<span class="css-property">width</span>: <span class="css-value">100%</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="css-comment">/* Tablet */</span><br>
+                            <span class="css-keyword">@media</span> (<span class="css-property">min-width</span>: <span class="css-value">768px</span>) {<br>
+                            &nbsp;&nbsp;<span class="css-selector">.contenedor</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="css-property">width</span>: <span class="css-value">750px</span>;<br>
+                            &nbsp;&nbsp;}<br>
+                            }<br>
+                            <br>
+                            <span class="css-comment">/* Escritorio */</span><br>
+                            <span class="css-keyword">@media</span> (<span class="css-property">min-width</span>: <span class="css-value">992px</span>) {<br>
+                            &nbsp;&nbsp;<span class="css-selector">.contenedor</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="css-property">width</span>: <span class="css-value">970px</span>;<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </div>
+                        
+                        <h3>Enfoques responsive</h3>
+                        <ul>
+                            <li><strong>Mobile First:</strong> Diseña primero para móviles y luego añade estilos para pantallas más grandes</li>
+                            <li><strong>Unidades relativas:</strong> Usa %, vw, vh, rem, em en lugar de px fijos</li>
+                            <li><strong>Imágenes flexibles:</strong> <code>max-width: 100%; height: auto;</code></li>
+                            <li><strong>Grid y Flexbox:</strong> Son intrínsecamente responsive</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Puntos de ruptura comunes:</strong> 576px (móviles), 768px (tablets), 992px (pequeños escritorios), 1200px (escritorios grandes).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN JAVASCRIPT BÁSICO -->
+                    <article id="js-basico" class="tech-section js-section">
+                        <h2 class="section-title js-title"><i class="fab fa-js"></i> JavaScript Básico</h2>
+                        
+                        <p>JavaScript es el lenguaje de programación que permite añadir interactividad a las páginas web.</p>
+                        
+                        <h3>Sintaxis básica</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Variables</span><br>
+                            <span class="js-keyword">let</span> mensaje = <span class="js-string">"Hola Mundo"</span>;<br>
+                            <span class="js-keyword">const</span> PI = <span class="js-number">3.1416</span>;<br>
+                            <span class="js-keyword">var</span> edad = <span class="js-number">25</span>; <span class="js-comment">// Menos usado en ES6+</span><br>
+                            <br>
+                            <span class="js-comment">// Funciones</span><br>
+                            <span class="js-keyword">function</span> <span class="js-function">saludar</span>(nombre) {<br>
+                            &nbsp;&nbsp;<span class="js-keyword">return</span> <span class="js-string">`Hola ${nombre}`</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="js-comment">// Arrow function (ES6+)</span><br>
+                            <span class="js-keyword">const</span> <span class="js-function">sumar</span> = (a, b) => a + b;<br>
+                            <br>
+                            <span class="js-comment">// Condicionales</span><br>
+                            <span class="js-keyword">if</span> (edad >= <span class="js-number">18</span>) {<br>
+                            &nbsp;&nbsp;console.<span class="js-function">log</span>(<span class="js-string">"Mayor de edad"</span>);<br>
+                            } <span class="js-keyword">else</span> {<br>
+                            &nbsp;&nbsp;console.<span class="js-function">log</span>(<span class="js-string">"Menor de edad"</span>);<br>
+                            }<br>
+                            <br>
+                            <span class="js-comment">// Bucles</span><br>
+                            <span class="js-keyword">for</span> (<span class="js-keyword">let</span> i = <span class="js-number">0</span>; i < <span class="js-number">5</span>; i++) {<br>
+                            &nbsp;&nbsp;console.<span class="js-function">log</span>(i);<br>
+                            }<br>
+                            <br>
+                            <span class="js-comment">// Arrays</span><br>
+                            <span class="js-keyword">const</span> frutas = [<span class="js-string">'manzana'</span>, <span class="js-string">'banana'</span>];<br>
+                            frutas.<span class="js-function">push</span>(<span class="js-string">'naranja'</span>);<br>
+                        </div>
+                        
+                        <h3>Tipos de datos</h3>
+                        <ul>
+                            <li><strong>Primitivos:</strong> String, Number, Boolean, Null, Undefined, Symbol, BigInt</li>
+                            <li><strong>Objetos:</strong> Object, Array, Function, Date, etc.</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            <p><strong>Cuidado:</strong> JavaScript tiene coerción de tipos que puede llevar a resultados inesperados (ej: <code>"5" + 3 = "53"</code> pero <code>"5" - 3 = 2</code>).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MANIPULACIÓN DEL DOM -->
+                    <article id="dom" class="tech-section js-section">
+                        <h2 class="section-title js-title"><i class="fab fa-js"></i> Manipulación del DOM</h2>
+                        
+                        <p>El DOM (Document Object Model) es la representación en objetos del documento HTML que JavaScript puede manipular.</p>
+                        
+                        <h3>Seleccionar elementos</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Selección tradicional</span><br>
+                            <span class="js-keyword">const</span> elemento = document.<span class="js-function">getElementById</span>(<span class="js-string">'miId'</span>);<br>
+                            <span class="js-keyword">const</span> elementos = document.<span class="js-function">getElementsByClassName</span>(<span class="js-string">'miClase'</span>);<br>
+                            <span class="js-keyword">const</span> tags = document.<span class="js-function">getElementsByTagName</span>(<span class="js-string">'p'</span>);<br>
+                            <br>
+                            <span class="js-comment">// Métodos modernos (querySelector)</span><br>
+                            <span class="js-keyword">const</span> el = document.<span class="js-function">querySelector</span>(<span class="js-string">'#miId'</span>); <span class="js-comment">// ID</span><br>
+                            <span class="js-keyword">const</span> els = document.<span class="js-function">querySelectorAll</span>(<span class="js-string">'.miClase'</span>); <span class="js-comment">// Clase</span>
+                        </div>
+                        
+                        <h3>Manipular elementos</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Cambiar contenido</span><br>
+                            elemento.<span class="js-property">textContent</span> = <span class="js-string">'Nuevo texto'</span>;<br>
+                            elemento.<span class="js-property">innerHTML</span> = <span class="js-string">'&lt;strong&gt;Texto&lt;/strong&gt; con HTML'</span>;<br>
+                            <br>
+                            <span class="js-comment">// Cambiar estilos</span><br>
+                            elemento.<span class="js-property">style</span>.<span class="js-property">color</span> = <span class="js-string">'red'</span>;<br>
+                            elemento.<span class="js-property">style</span>.<span class="js-property">backgroundColor</span> = <span class="js-string">'#eee'</span>;<br>
+                            <br>
+                            <span class="js-comment">// Añadir/remover clases</span><br>
+                            elemento.<span class="js-property">classList</span>.<span class="js-function">add</span>(<span class="js-string">'nueva-clase'</span>);<br>
+                            elemento.<span class="js-property">classList</span>.<span class="js-function">remove</span>(<span class="js-string">'vieja-clase'</span>);<br>
+                            elemento.<span class="js-property">classList</span>.<span class="js-function">toggle</span>(<span class="js-string">'clase-activa'</span>);<br>
+                            <br>
+                            <span class="js-comment">// Crear nuevo elemento</span><br>
+                            <span class="js-keyword">const</span> nuevoDiv = document.<span class="js-function">createElement</span>(<span class="js-string">'div'</span>);<br>
+                            document.<span class="js-property">body</span>.<span class="js-function">appendChild</span>(nuevoDiv);
+                        </div>
+                        
+                        <h3>Eventos</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Método tradicional</span><br>
+                            elemento.<span class="js-function">addEventListener</span>(<span class="js-string">'click'</span>, <span class="js-keyword">function</span>(evento) {<br>
+                            &nbsp;&nbsp;console.<span class="js-function">log</span>(<span class="js-string">'Clic en:'</span>, evento.<span class="js-property">target</span>);<br>
+                            });<br>
+                            <br>
+                            <span class="js-comment">// Eventos comunes</span><br>
+                            <span class="js-comment">// click, dblclick, mouseenter, mouseleave</span><br>
+                            <span class="js-comment">// keydown, keyup, keypress</span><br>
+                            <span class="js-comment">// submit, change, input, focus, blur</span><br>
+                            <span class="js-comment">// load, resize, scroll</span>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN ES6+ MODERNO -->
+                    <article id="es6" class="tech-section js-section">
+                        <h2 class="section-title js-title"><i class="fab fa-js"></i> ES6+ Moderno</h2>
+                        
+                        <p>ECMAScript 2015 (ES6) introdujo importantes mejoras a JavaScript. Estas son algunas características clave:</p>
+                        
+                        <h3>Variables let/const</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// let permite reasignación</span><br>
+                            <span class="js-keyword">let</span> nombre = <span class="js-string">'Juan'</span>;<br>
+                            nombre = <span class="js-string">'Carlos'</span>; <span class="js-comment">// OK</span><br>
+                            <br>
+                            <span class="js-comment">// const es para constantes</span><br>
+                            <span class="js-keyword">const</span> PI = <span class="js-number">3.1416</span>;<br>
+                            PI = <span class="js-number">3</span>; <span class="js-comment">// Error!</span>
+                        </div>
+                        
+                        <h3>Arrow functions</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Función tradicional</span><br>
+                            <span class="js-keyword">function</span> <span class="js-function">sumar</span>(a, b) {<br>
+                            &nbsp;&nbsp;<span class="js-keyword">return</span> a + b;<br>
+                            }<br>
+                            <br>
+                            <span class="js-comment">// Arrow function equivalente</span><br>
+                            <span class="js-keyword">const</span> <span class="js-function">sumar</span> = (a, b) => {<br>
+                            &nbsp;&nbsp;<span class="js-keyword">return</span> a + b;<br>
+                            };<br>
+                            <br>
+                            <span class="js-comment">// Forma más corta (return implícito)</span><br>
+                            <span class="js-keyword">const</span> <span class="js-function">sumar</span> = (a, b) => a + b;
+                        </div>
+                        
+                        <h3>Template literals</h3>
+                        <div class="code-block">
+                            <span class="js-keyword">const</span> nombre = <span class="js-string">'Juan'</span>;<br>
+                            <span class="js-keyword">const</span> edad = <span class="js-number">30</span>;<br>
+                            <br>
+                            <span class="js-comment">// Antes</span><br>
+                            <span class="js-keyword">const</span> mensaje = <span class="js-string">'Hola '</span> + nombre + <span class="js-string">', tienes '</span> + edad + <span class="js-string">' años.'</span>;<br>
+                            <br>
+                            <span class="js-comment">// Con template literals</span><br>
+                            <span class="js-keyword">const</span> mensaje = <span class="js-string">`Hola ${nombre}, tienes ${edad} años.`</span>;
+                        </div>
+                        
+                        <h3>Destructuring</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Arrays</span><br>
+                            <span class="js-keyword">const</span> numeros = [<span class="js-number">1</span>, <span class="js-number">2</span>, <span class="js-number">3</span>];<br>
+                            <span class="js-keyword">const</span> [primero, segundo] = numeros;<br>
+                            <br>
+                            <span class="js-comment">// Objetos</span><br>
+                            <span class="js-keyword">const</span> persona = { <span class="js-property">nombre</span>: <span class="js-string">'Juan'</span>, <span class="js-property">edad</span>: <span class="js-number">30</span> };<br>
+                            <span class="js-keyword">const</span> { nombre, edad } = persona;
+                        </div>
+                        
+                        <h3>Módulos (import/export)</h3>
+                        <div class="code-block">
+                            <span class="js-comment">// Exportar en modulo.js</span><br>
+                            <span class="js-keyword">export</span> <span class="js-keyword">const</span> PI = <span class="js-number">3.1416</span>;<br>
+                            <span class="js-keyword">export</span> <span class="js-keyword">function</span> <span class="js-function">sumar</span>(a, b) { <span class="js-keyword">return</span> a + b; }<br>
+                            <br>
+                            <span class="js-comment">// Importar en otro archivo</span><br>
+                            <span class="js-keyword">import</span> { PI, sumar } <span class="js-keyword">from</span> <span class="js-string">'./modulo.js'</span>;
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN RECURSOS -->
+                    <article id="recursos" class="tech-section">
+                        <h2 class="section-title"><i class="fas fa-book"></i> Recursos Adicionales</h2>
+                        
+                        <h3>Documentación oficial</h3>
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN HTML</a></li>
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN CSS</a></li>
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">MDN JavaScript</a></li>
+                        </ul>
+                        
+                        <h3>Herramientas</h3>
+                        <ul>
+                            <li><a href="https://codepen.io/" target="_blank">CodePen</a> - Editor online para prototipado</li>
+                            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a> - Otra herramienta para experimentar</li>
+                            <li><a href="https://caniuse.com/" target="_blank">Can I use</a> - Compatibilidad de características</li>
+                        </ul>
+                        
+                        <h3>Frameworks y librerías populares</h3>
+                        <ul>
+                            <li><a href="https://es.reactjs.org/" target="_blank">React</a> - Biblioteca para interfaces de usuario</li>
+                            <li><a href="https://vuejs.org/" target="_blank">Vue.js</a> - Framework progresivo</li>
+                            <li><a href="https://angular.io/" target="_blank">Angular</a> - Framework completo</li>
+                            <li><a href="https://sass-lang.com/" target="_blank">Sass</a> - Preprocesador CSS</li>
+                            <li><a href="https://webpack.js.org/" target="_blank">Webpack</a> - Empaquetador de módulos</li>
+                        </ul>
+                        
+                        <h3>Práctica</h3>
+                        <ul>
+                            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a> - Cursos gratuitos</li>
+                            <li><a href="https://frontendmentor.io/" target="_blank">Frontend Mentor</a> - Desafíos prácticos</li>
+                            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - Tutoriales y artículos</li>
+                        </ul>
+                    </article>
+                    
+                    <div class="guide-download">
+                        <h3>¿Quieres esta guía en formato PDF?</h3>
+                        <p>Descarga la versión completa con todos los ejemplos y referencias.</p>
+                        <a href="#" class="btn"><i class="fas fa-download"></i> Descargar Guía Completa</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../index.html#guias">Guías</a></li>
+                        <li><a href="../index.html#descargas">Descargas</a></li>
+                        <li><a href="../index.html#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
