@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Guía para Programadores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/src/css/python.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="../index.html#guias">Guías</a></li>
+                    <li><a href="../index.html#descargas">Descargas</a></li>
+                    <li><a href="../index.html#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">
+            <div class="guide-title">
+                <img src="../images/python-icon.png" alt="Python">
+                <h1>Guía Completa de Python</h1>
+                <p class="guide-description">Domina el lenguaje de programación más versátil y demandado del mercado</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion">Introducción a Python</a></li>
+                        <li><a href="#instalacion">Instalación</a></li>
+                        <li><a href="#configuracion">Configuración</a></li>
+                        <li><a href="#entornos-virtuales">Entornos virtuales</a></li>
+                        <li><a href="#sintaxis-basica">Sintaxis básica</a></li>
+                        <li><a href="#estructuras-datos">Estructuras de datos</a></li>
+                        <li><a href="#librerias-esenciales">Librerías esenciales</a></li>
+                        <li><a href="#pip">Gestión de paquetes (pip)</a></li>
+                        <li><a href="#entornos-desarrollo">Entornos de desarrollo</a></li>
+                        <li><a href="#buenas-practicas">Buenas prácticas</a></li>
+                        <li><a href="#recursos">Recursos adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion">
+                        <h2>Introducción a Python</h2>
+                        <p>Python es un lenguaje de programación interpretado, de alto nivel y multipropósito, creado por Guido van Rossum en 1991. Es conocido por su sintaxis clara y legible que favorece la productividad del desarrollador.</p>
+                        
+                        <h3>Características principales</h3>
+                        <ul>
+                            <li><strong>Multiplataforma:</strong> Funciona en Windows, macOS y Linux</li>
+                            <li><strong>Multiparadigma:</strong> Soporta programación orientada a objetos, funcional e imperativa</li>
+                            <li><strong>Tipado dinámico:</strong> No es necesario declarar el tipo de variable</li>
+                            <li><strong>Gran ecosistema:</strong> Miles de librerías para casi cualquier necesidad</li>
+                            <li><strong>Comunidad activa:</strong> Una de las comunidades más grandes y activas</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Sabías que:</strong> Python es el lenguaje más popular según el Índice TIOBE y es ampliamente usado en campos como inteligencia artificial, ciencia de datos, desarrollo web y automatización.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="instalacion">
+                        <h2>Instalación de Python</h2>
+                        <p>Python viene preinstalado en la mayoría de sistemas Linux y macOS, pero para Windows o para obtener la última versión necesitarás instalarlo manualmente.</p>
+                        
+                        <h3>Windows</h3>
+                        <ol>
+                            <li>Descarga el instalador desde <a href="https://www.python.org/downloads/windows/" target="_blank">python.org</a></li>
+                            <li>Ejecuta el instalador</li>
+                            <li>Marca la opción "Add Python to PATH" (IMPORTANTE)</li>
+                            <li>Selecciona "Install Now"</li>
+                        </ol>
+                        
+                        <h3>macOS</h3>
+                        <p>Opción 1: Usa Homebrew (recomendado):</p>
+                        <div class="python-code">
+                            brew install python
+                        </div>
+                        
+                        <p>Opción 2: Descarga el instalador desde <a href="https://www.python.org/downloads/macos/" target="_blank">python.org</a></p>
+                        
+                        <h3>Linux (Debian/Ubuntu)</h3>
+                        <p>Python 3 viene preinstalado en la mayoría de distribuciones. Para asegurarte:</p>
+                        <div class="python-code">
+                            sudo apt update
+                            sudo apt install python3 python3-pip python3-venv
+                        </div>
+                        
+                        <h3>Verificar instalación</h3>
+                        <p>Abre una terminal y ejecuta:</p>
+                        <div class="python-code">
+                            python --version
+                            # o
+                            python3 --version
+                        </div>
+                        <p>Deberías ver algo como: <code>Python 3.9.7</code></p>
+                    </article>
+                    
+                    <article id="configuracion">
+                        <h2>Configuración inicial</h2>
+                        
+                        <h3>Variables de entorno PATH</h3>
+                        <p>Asegúrate que Python y pip están en tu PATH para poder usarlos desde cualquier directorio.</p>
+                        
+                        <h4>Windows</h4>
+                        <p>Si marcaste "Add Python to PATH" durante la instalación, ya debería estar configurado. Si no:</p>
+                        <ol>
+                            <li>Busca "Variables de entorno" en el menú de inicio</li>
+                            <li>Selecciona "Editar las variables de entorno del sistema"</li>
+                            <li>Haz clic en "Variables de entorno..."</li>
+                            <li>En "Variables del sistema", busca "Path" y haz clic en "Editar"</li>
+                            <li>Agrega las rutas a Python y Scripts (normalmente C:\Python39 y C:\Python39\Scripts)</li>
+                        </ol>
+                        
+                        <h4>macOS/Linux</h4>
+                        <p>Normalmente se agrega automáticamente. Verifica con:</p>
+                        <div class="python-code">
+                            which python3
+                            which pip3
+                        </div>
+                        
+                        <h3>Configurar pip</h3>
+                        <p>Pip es el gestor de paquetes de Python. Actualízalo y configura un espejo más rápido si es necesario:</p>
+                        <div class="python-code">
+                            python -m pip install --upgrade pip
+                            
+                            # Opcional: Configurar mirror más rápido (ejemplo para China)
+                            pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+                        </div>
+                    </article>
+                    
+                    <article id="entornos-virtuales">
+                        <h2>Entornos virtuales</h2>
+                        <p>Los entornos virtuales permiten aislar las dependencias de cada proyecto. Es una buena práctica crear uno para cada proyecto.</p>
+                        
+                        <h3>Crear un entorno virtual</h3>
+                        <div class="python-code">
+                            # Crear entorno
+                            python -m venv mi_entorno
+                            
+                            # Activar (Windows)
+                            mi_entorno\Scripts\activate
+                            
+                            # Activar (macOS/Linux)
+                            source mi_entorno/bin/activate
+                        </div>
+                        
+                        <h3>Comandos útiles</h3>
+                        <div class="python-code">
+                            # Desactivar entorno
+                            deactivate
+                            
+                            # Listar paquetes instalados
+                            pip list
+                            
+                            # Guardar dependencias a archivo
+                            pip freeze > requirements.txt
+                            
+                            # Instalar desde requirements.txt
+                            pip install -r requirements.txt
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Tip:</strong> Usa <code>python -m venv</code> en lugar de <code>virtualenv</code> ya que viene incluido en Python 3.3+.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="sintaxis-basica">
+                        <h2>Sintaxis básica</h2>
+                        
+                        <h3>Hola Mundo</h3>
+                        <div class="python-code">
+                            <span class="keyword">print</span>(<span class="string">"Hola Mundo!"</span>)
+                        </div>
+                        
+                        <h3>Variables y tipos</h3>
+                        <div class="python-code">
+                            <span class="comment"># Enteros</span>
+                            edad = 25
+                            
+                            <span class="comment"># Flotantes</span>
+                            precio = 19.99
+                            
+                            <span class="comment"># Strings</span>
+                            nombre = <span class="string">"Juan"</span>
+                            
+                            <span class="comment"># Booleanos</span>
+                            es_mayor = True
+                            
+                            <span class="comment"># None (similar a null)</span>
+                            resultado = None
+                        </div>
+                        
+                        <h3>Estructuras de control</h3>
+                        <div class="python-code">
+                            <span class="comment"># Condicional if</span>
+                            <span class="keyword">if</span> edad >= 18:
+                                <span class="keyword">print</span>(<span class="string">"Mayor de edad"</span>)
+                            <span class="keyword">elif</span> edad >= 13:
+                                <span class="keyword">print</span>(<span class="string">"Adolescente"</span>)
+                            <span class="keyword">else</span>:
+                                <span class="keyword">print</span>(<span class="string">"Niño"</span>)
+                            
+                            <span class="comment"># Bucle for</span>
+                            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(5):
+                                <span class="keyword">print</span>(i)
+                            
+                            <span class="comment"># Bucle while</span>
+                            contador = 0
+                            <span class="keyword">while</span> contador < 5:
+                                <span class="keyword">print</span>(contador)
+                                contador += 1
+                        </div>
+                    </article>
+                    
+                    <article id="estructuras-datos">
+                        <h2>Estructuras de datos</h2>
+                        
+                        <h3>Listas</h3>
+                        <div class="python-code">
+                            <span class="comment"># Creación</span>
+                            frutas = [<span class="string">'manzana'</span>, <span class="string">'banana'</span>, <span class="string">'naranja'</span>]
+                            
+                            <span class="comment"># Acceso</span>
+                            primera_fruta = frutas[0]  <span class="comment"># 'manzana'</span>
+                            
+                            <span class="comment"># Métodos comunes</span>
+                            frutas.append(<span class="string">'uva'</span>)      <span class="comment"># Añade al final</span>
+                            frutas.insert(1, <span class="string">'mango'</span>) <span class="comment"># Inserta en posición</span>
+                            frutas.remove(<span class="string">'banana'</span>)  <span class="comment"># Elimina elemento</span>
+                        </div>
+                        
+                        <h3>Tuplas</h3>
+                        <div class="python-code">
+                            <span class="comment"># Inmutables</span>
+                            coordenadas = (10, 20)
+                            x, y = coordenadas  <span class="comment"># Desempaquetado</span>
+                        </div>
+                        
+                        <h3>Diccionarios</h3>
+                        <div class="python-code">
+                            persona = {
+                                <span class="string">'nombre'</span>: <span class="string">'Ana'</span>,
+                                <span class="string">'edad'</span>: 30,
+                                <span class="string">'ciudad'</span>: <span class="string">'Madrid'</span>
+                            }
+                            
+                            <span class="comment"># Acceso</span>
+                            nombre = persona[<span class="string">'nombre'</span>]
+                            
+                            <span class="comment"># Métodos</span>
+                            persona[<span class="string">'trabajo'</span>] = <span class="string">'Ingeniera'</span>  <span class="comment"># Añadir/actualizar</span>
+                            del persona[<span class="string">'edad'</span>]         <span class="comment"># Eliminar</span>
+                        </div>
+                        
+                        <h3>Sets</h3>
+                        <div class="python-code">
+                            <span class="comment"># Colección no ordenada y sin duplicados</span>
+                            numeros = {1, 2, 3, 3, 4}  <span class="comment"># {1, 2, 3, 4}</span>
+                            
+                            <span class="comment"># Operaciones de conjuntos</span>
+                            a = {1, 2, 3}
+                            b = {3, 4, 5}
+                            union = a | b          <span class="comment"># {1, 2, 3, 4, 5}</span>
+                            interseccion = a & b   <span class="comment"># {3}</span>
+                        </div>
+                    </article>
+                    
+                    <article id="librerias-esenciales">
+                        <h2>Librerías esenciales</h2>
+                        <p>Python tiene un rico ecosistema de librerías. Estas son algunas de las más importantes:</p>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-chart-line"></i> NumPy</h4>
+                            <p>Computación numérica eficiente con arrays multidimensionales.</p>
+                            <div class="pip-install">pip install numpy</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-table"></i> Pandas</h4>
+                            <p>Manipulación y análisis de datos estructurados.</p>
+                            <div class="pip-install">pip install pandas</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-project-diagram"></i> Matplotlib</h4>
+                            <p>Visualización de datos en 2D.</p>
+                            <div class="pip-install">pip install matplotlib</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-brain"></i> TensorFlow/PyTorch</h4>
+                            <p>Librerías para machine learning y deep learning.</p>
+                            <div class="pip-install">pip install tensorflow</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-globe"></i> Requests</h4>
+                            <p>Peticiones HTTP sencillas y elegantes.</p>
+                            <div class="pip-install">pip install requests</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-spider"></i> BeautifulSoup</h4>
+                            <p>Web scraping y parsing de HTML/XML.</p>
+                            <div class="pip-install">pip install beautifulsoup4</div>
+                        </div>
+                        
+                        <div class="lib-card">
+                            <h4><i class="fas fa-server"></i> Flask/Django</h4>
+                            <p>Frameworks para desarrollo web.</p>
+                            <div class="pip-install">pip install flask django</div>
+                        </div>
+                    </article>
+                    
+                    <article id="pip">
+                        <h2>Gestión de paquetes con pip</h2>
+                        <p>Pip es el sistema de gestión de paquetes estándar de Python. Permite instalar y administrar librerías adicionales.</p>
+                        
+                        <h3>Comandos esenciales</h3>
+                        <div class="python-code">
+                            <span class="comment"># Instalar un paquete</span>
+                            pip install nombre_paquete
+                            
+                            <span class="comment"># Instalar versión específica</span>
+                            pip install nombre_paquete==1.2.3
+                            
+                            <span class="comment"># Actualizar un paquete</span>
+                            pip install --upgrade nombre_paquete
+                            
+                            <span class="comment"># Desinstalar</span>
+                            pip uninstall nombre_paquete
+                            
+                            <span class="comment"># Listar paquetes instalados</span>
+                            pip list
+                            
+                            <span class="comment"># Mostrar información de un paquete</span>
+                            pip show nombre_paquete
+                            
+                            <span class="comment"># Guardar dependencias</span>
+                            pip freeze > requirements.txt
+                            
+                            <span class="comment"># Instalar desde requirements.txt</span>
+                            pip install -r requirements.txt
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Precaución:</strong> Evita instalar paquetes globalmente (sin entorno virtual) para prevenir conflictos entre proyectos.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="entornos-desarrollo">
+                        <h2>Entornos de desarrollo</h2>
+                        
+                        <h3>Editores y IDEs recomendados</h3>
+                        <ul>
+                            <li><strong>VS Code:</strong> Ligero y altamente configurable con extensión Python</li>
+                            <li><strong>PyCharm:</strong> IDE completo especializado para Python (versión Community gratuita)</li>
+                            <li><strong>Jupyter Notebook:</strong> Ideal para ciencia de datos y análisis exploratorio</li>
+                            <li><strong>Sublime Text:</strong> Editor rápido con buen soporte para Python</li>
+                            <li><strong>Vim/Emacs:</strong> Para usuarios avanzados que prefieren terminal</li>
+                        </ul>
+                        
+                        <h3>Configuración recomendada para VS Code</h3>
+                        <ol>
+                            <li>Instala VS Code desde <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a></li>
+                            <li>Abre la paleta de comandos (Ctrl+Shift+P) y busca "Extensions: Install Extensions"</li>
+                            <li>Instala la extensión "Python" de Microsoft</li>
+                            <li>Instala "Pylance" para mejor autocompletado</li>
+                            <li>Configura el linter (pylint o flake8) y formateador (autopep8 o black)</li>
+                        </ol>
+                        
+                        <div class="note">
+                            <p><strong>Productividad:</strong> Aprende los atajos de teclado de tu editor favorito para aumentar significativamente tu velocidad de desarrollo.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="buenas-practicas">
+                        <h2>Buenas prácticas en Python</h2>
+                        
+                        <h3>Estilo de código (PEP 8)</h3>
+                        <ul>
+                            <li>Usa 4 espacios por nivel de indentación</li>
+                            <li>Líneas de máximo 79 caracteres</li>
+                            <li>Nombres de variables en snake_case: <code>mi_variable</code></li>
+                            <li>Nombres de clases en CamelCase: <code>MiClase</code></li>
+                            <li>Constantes en MAYÚSCULAS: <code>MI_CONSTANTE</code></li>
+                            <li>Espacios alrededor de operadores y después de comas</li>
+                        </ul>
+                        
+                        <h3>Consejos generales</h3>
+                        <ul>
+                            <li>Usa docstrings para documentar funciones y clases</li>
+                            <li>Divide tu código en módulos lógicos</li>
+                            <li>Escribe pruebas unitarias (unittest, pytest)</li>
+                            <li>Maneja excepciones adecuadamente</li>
+                            <li>Evita el código repetido (DRY - Don't Repeat Yourself)</li>
+                            <li>Usa type hints para mejorar la legibilidad (Python 3.5+)</li>
+                        </ul>
+                        
+                        <h3>Ejemplo de función bien escrita</h3>
+                        <div class="python-code">
+                            <span class="keyword">def</span> <span class="function">calcular_promedio</span>(numeros: list[<span class="function">float</span>]) -> <span class="function">float</span>:
+                                <span class="string">"""Calcula el promedio de una lista de números.
+                                
+                                Args:
+                                    numeros: Lista de números para calcular el promedio.
+                                
+                                Returns:
+                                    El promedio de los números.
+                                
+                                Raises:
+                                    ValueError: Si la lista está vacía.
+                                """</span>
+                                <span class="keyword">if</span> <span class="keyword">not</span> numeros:
+                                    <span class="keyword">raise</span> ValueError(<span class="string">"La lista no puede estar vacía"</span>)
+                                
+                                <span class="keyword">return</span> <span class="function">sum</span>(numeros) / <span class="function">len</span>(numeros)
+                        </div>
+                    </article>
+                    
+                    <article id="recursos">
+                        <h2>Recursos adicionales</h2>
+                        
+                        <h3>Documentación oficial</h3>
+                        <ul>
+                            <li><a href="https://docs.python.org/3/" target="_blank">Documentación oficial de Python</a></li>
+                            <li><a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8 - Guía de estilo</a></li>
+                            <li><a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank">Guía para principiantes</a></li>
+                        </ul>
+                        
+                        <h3>Cursos y tutoriales</h3>
+                        <ul>
+                            <li><a href="https://www.learnpython.org" target="_blank">LearnPython.org (interactivo)</a></li>
+                            <li><a href="https://realpython.com" target="_blank">Real Python (tutoriales avanzados)</a></li>
+                            <li><a href="https://docs.python-guide.org/" target="_blank">The Hitchhiker's Guide to Python</a></li>
+                        </ul>
+                        
+                        <h3>Comunidad</h3>
+                        <ul>
+                            <li><a href="https://stackoverflow.com/questions/tagged/python" target="_blank">Stack Overflow (etiqueta Python)</a></li>
+                            <li><a href="https://www.reddit.com/r/Python/" target="_blank">Subreddit de Python</a></li>
+                            <li><a href="https://discuss.python.org/" target="_blank">Foro oficial de Python</a></li>
+                        </ul>
+                        
+                        <h3>Libros recomendados</h3>
+                        <ul>
+                            <li>"Python Crash Course" - Eric Matthes (para principiantes)</li>
+                            <li>"Fluent Python" - Luciano Ramalho (para intermedios/avanzados)</li>
+                            <li>"Effective Python" - Brett Slatkin (mejores prácticas)</li>
+                        </ul>
+                    </article>
+                    
+                    <div class="guide-download">
+                        <h3>¿Quieres esta guía en formato PDF?</h3>
+                        <p>Descarga la versión completa con todos los comandos y ejemplos prácticos.</p>
+                        <a href="#" class="btn"><i class="fas fa-download"></i> Descargar Guía Completa</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../index.html#guias">Guías</a></li>
+                        <li><a href="../index.html#descargas">Descargas</a></li>
+                        <li><a href="../index.html#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
