@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker - Guía para Programadores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/docker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html#guias">Guías</a></li>
+                    <li><a href="/index.html#descargas">Descargas</a></li>
+                    <li><a href="/index.html#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">
+            <div class="guide-title">
+                <img src="../images/docker-icon.png" alt="Docker">
+                <h1>Guía Completa de Docker</h1>
+                <p class="guide-description">Domina la contenerización de aplicaciones y el despliegue consistente en cualquier entorno</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion">Introducción a Docker</a></li>
+                        <li><a href="#instalacion">Instalación y Configuración</a></li>
+                        <li><a href="#conceptos">Conceptos Fundamentales</a></li>
+                        <li><a href="#comandos">Comandos Esenciales</a></li>
+                        <li><a href="#dockerfile">Crear Imágenes con Dockerfile</a></li>
+                        <li><a href="#compose">Orquestación con Docker Compose</a></li>
+                        <li><a href="#redes">Redes en Docker</a></li>
+                        <li><a href="#volumenes">Volúmenes y Persistencia</a></li>
+                        <li><a href="#produccion">Docker en Producción</a></li>
+                        <li><a href="#mejores-practicas">Mejores Prácticas</a></li>
+                        <li><a href="#recursos">Recursos Adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Introducción a Docker</h2>
+                        
+                        <p>Docker es una plataforma abierta para desarrollar, enviar y ejecutar aplicaciones en contenedores. Los contenedores permiten empaquetar una aplicación con todas sus dependencias en una unidad estandarizada para el desarrollo.</p>
+                        
+                        <h3>¿Qué es un contenedor?</h3>
+                        <p>Un contenedor es una unidad de software ligera y ejecutable que incluye todo lo necesario para ejecutar una aplicación: código, runtime, herramientas del sistema, bibliotecas y configuraciones.</p>
+                        
+                        <div class="architecture-diagram">
+                            <img src="../images/docker-architecture.png" alt="Arquitectura de Docker">
+                            <p class="image-caption">Arquitectura básica de Docker</p>
+                        </div>
+                        
+                        <h3>Beneficios de Docker</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-check-circle"></i> Consistencia</h4>
+                                <p>Funciona igual en desarrollo, pruebas y producción</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-box"></i> Aislamiento</h4>
+                                <p>Aplicaciones independientes con sus propias dependencias</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-tachometer-alt"></i> Eficiencia</h4>
+                                <p>Menos recursos que máquinas virtuales, inicio más rápido</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-exchange-alt"></i> Portabilidad</h4>
+                                <p>Ejecutable en cualquier sistema con Docker instalado</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Docker vs Máquinas Virtuales</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Docker</th>
+                                    <th>Máquina Virtual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tamaño</td>
+                                    <td>MB (solo app y dependencias)</td>
+                                    <td>GB (SO completo)</td>
+                                </tr>
+                                <tr>
+                                    <td>Rendimiento</td>
+                                    <td>Casi nativo</td>
+                                    <td>Overhead por hipervisor</td>
+                                </tr>
+                                <tr>
+                                    <td>Inicio</td>
+                                    <td>Segundos</td>
+                                    <td>Minutos</td>
+                                </tr>
+                                <tr>
+                                    <td>Aislamiento</td>
+                                    <td>Nivel de proceso</td>
+                                    <td>Nivel de hardware</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Docker no es un reemplazo para VMs en todos los casos. Ambos tienen sus usos específicos y pueden complementarse.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN INSTALACIÓN -->
+                    <article id="instalacion" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Instalación y Configuración</h2>
+                        
+                        <p>Docker está disponible para los principales sistemas operativos. Aquí te mostramos cómo instalarlo:</p>
+                        
+                        <h3>Instalar Docker en Linux (Ubuntu/Debian)</h3>
+                        <div class="docker-command">
+                            <span class="prompt">$</span> sudo apt-get update<br>
+                            <span class="prompt">$</span> sudo apt-get install \<br>
+                            &nbsp;&nbsp;apt-transport-https \<br>
+                            &nbsp;&nbsp;ca-certificates \<br>
+                            &nbsp;&nbsp;curl \<br>
+                            &nbsp;&nbsp;gnupg \<br>
+                            &nbsp;&nbsp;lsb-release<br>
+                            <br>
+                            <span class="prompt">$</span> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br>
+                            <br>
+                            <span class="prompt">$</span> echo \<br>
+                            &nbsp;&nbsp;"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \<br>
+                            &nbsp;&nbsp;$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
+                            <br>
+                            <span class="prompt">$</span> sudo apt-get update<br>
+                            <span class="prompt">$</span> sudo apt-get install docker-ce docker-ce-cli containerd.io<br>
+                            <br>
+                            <span class="comment"># Verificar instalación</span><br>
+                            <span class="prompt">$</span> sudo docker run hello-world
+                        </div>
+                        
+                        <h3>Instalar Docker en Windows/macOS</h3>
+                        <p>Para Windows y macOS, se recomienda descargar Docker Desktop:</p>
+                        <ol>
+                            <li>Visita <a href="https://www.docker.com/products/docker-desktop" target="_blank">docker.com/products/docker-desktop</a></li>
+                            <li>Descarga el instalador para tu sistema operativo</li>
+                            <li>Sigue las instrucciones del instalador</li>
+                            <li>Verifica la instalación abriendo una terminal y ejecutando:</li>
+                        </ol>
+                        <div class="docker-command">
+                            <span class="prompt">$</span> docker --version<br>
+                            <span class="prompt">$</span> docker run hello-world
+                        </div>
+                        
+                        <h3>Configuración post-instalación</h3>
+                        <p>En Linux, para evitar usar <code>sudo</code> con Docker:</p>
+                        <div class="docker-command">
+                            <span class="prompt">$</span> sudo groupadd docker<br>
+                            <span class="prompt">$</span> sudo usermod -aG docker $USER<br>
+                            <span class="prompt">$</span> newgrp docker<br>
+                            <span class="comment"># Verificar que funciona sin sudo</span><br>
+                            <span class="prompt">$</span> docker run hello-world
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Seguridad:</strong> El grupo docker equivale a root. Solo añade usuarios de confianza a este grupo.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN CONCEPTOS -->
+                    <article id="conceptos" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Conceptos Fundamentales</h2>
+                        
+                        <p>Para trabajar efectivamente con Docker, es importante entender sus componentes clave:</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-box-open"></i> Imágenes</h4>
+                                <p>Plantillas de solo lectura con las instrucciones para crear un contenedor. Se componen de capas.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-box"></i> Contenedores</h4>
+                                <p>Instancias ejecutables de imágenes. Son efímeros por naturaleza.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-hdd"></i> Volúmenes</h4>
+                                <p>Mecanismo para persistir datos generados por contenedores.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-network-wired"></i> Redes</h4>
+                                <p>Permiten la comunicación entre contenedores y con el exterior.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Ciclo de vida de un contenedor</h3>
+                        <div class="architecture-diagram">
+                            <img src="../images/docker-lifecycle.png" alt="Ciclo de vida Docker">
+                            <p class="image-caption">Estados posibles de un contenedor Docker</p>
+                        </div>
+                        
+                        <h3>Registro Docker</h3>
+                        <p>Repositorio para almacenar y distribuir imágenes. Docker Hub es el registro público predeterminado.</p>
+                        <ul>
+                            <li><strong>Imágenes oficiales:</strong> Proporcionadas por proveedores (nginx, postgres, node)</li>
+                            <li><strong>Imágenes públicas:</strong> Compartidas por la comunidad</li>
+                            <li><strong>Imágenes privadas:</strong> Para uso interno de organizaciones</li>
+                        </ul>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Siempre verifica las imágenes de terceros antes de usarlas en producción. Las imágenes oficiales son las más seguras.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN COMANDOS -->
+                    <article id="comandos" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Comandos Esenciales de Docker</h2>
+                        
+                        <p>La CLI de Docker es la principal herramienta para interactuar con el motor Docker.</p>
+                        
+                        <h3>Gestión de imágenes</h3>
+                        <div class="docker-command">
+                            <span class="comment"># Descargar una imagen</span><br>
+                            <span class="prompt">$</span> docker pull nginx:latest<br>
+                            <br>
+                            <span class="comment"># Listar imágenes locales</span><br>
+                            <span class="prompt">$</span> docker images<br>
+                            <span class="prompt">$</span> docker image ls<br>
+                            <br>
+                            <span class="comment"># Eliminar una imagen</span><br>
+                            <span class="prompt">$</span> docker rmi nginx<br>
+                            <span class="prompt">$</span> docker image rm nginx<br>
+                            <br>
+                            <span class="comment"># Buscar imágenes en Docker Hub</span><br>
+                            <span class="prompt">$</span> docker search mysql
+                        </div>
+                        
+                        <h3>Gestión de contenedores</h3>
+                        <div class="docker-command">
+                            <span class="comment"># Ejecutar un contenedor</span><br>
+                            <span class="prompt">$</span> docker run -d -p 8080:80 --name my-nginx nginx<br>
+                            <br>
+                            <span class="comment"># Listar contenedores en ejecución</span><br>
+                            <span class="prompt">$</span> docker ps<br>
+                            <span class="comment"># Listar todos los contenedores (incluyendo detenidos)</span><br>
+                            <span class="prompt">$</span> docker ps -a<br>
+                            <br>
+                            <span class="comment"># Detener un contenedor</span><br>
+                            <span class="prompt">$</span> docker stop my-nginx<br>
+                            <span class="comment"># Iniciar un contenedor detenido</span><br>
+                            <span class="prompt">$</span> docker start my-nginx<br>
+                            <br>
+                            <span class="comment"># Eliminar un contenedor</span><br>
+                            <span class="prompt">$</span> docker rm my-nginx<br>
+                            <span class="comment"># Eliminar contenedores detenidos</span><br>
+                            <span class="prompt">$</span> docker container prune<br>
+                            <br>
+                            <span class="comment"># Ver logs de un contenedor</span><br>
+                            <span class="prompt">$</span> docker logs my-nginx<br>
+                            <span class="comment"># Seguir logs en tiempo real</span><br>
+                            <span class="prompt">$</span> docker logs -f my-nginx
+                        </div>
+                        
+                        <h3>Opciones comunes de docker run</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Opción</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>-d</td>
+                                    <td>Ejecutar en segundo plano (detached)</td>
+                                    <td>docker run -d nginx</td>
+                                </tr>
+                                <tr>
+                                    <td>-p</td>
+                                    <td>Mapear puertos (host:contenedor)</td>
+                                    <td>docker run -p 8080:80 nginx</td>
+                                </tr>
+                                <tr>
+                                    <td>-v</td>
+                                    <td>Montar volúmenes (host:contenedor)</td>
+                                    <td>docker run -v /datos:/app/data nginx</td>
+                                </tr>
+                                <tr>
+                                    <td>-e</td>
+                                    <td>Establecer variables de entorno</td>
+                                    <td>docker run -e "VAR=valor" nginx</td>
+                                </tr>
+                                <tr>
+                                    <td>--name</td>
+                                    <td>Asignar nombre al contenedor</td>
+                                    <td>docker run --name mi-nginx nginx</td>
+                                </tr>
+                                <tr>
+                                    <td>--rm</td>
+                                    <td>Eliminar contenedor al detenerse</td>
+                                    <td>docker run --rm nginx</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="note">
+                            <p><strong>Atajo:</strong> Puedes combinar múltiples opciones en un solo comando, por ejemplo: <code>docker run -d -p 8080:80 --name my-nginx -v ./html:/usr/share/nginx/html nginx</code></p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN DOCKERFILE -->
+                    <article id="dockerfile" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Crear Imágenes con Dockerfile</h2>
+                        
+                        <p>Un Dockerfile es un archivo de texto con instrucciones para construir una imagen Docker personalizada.</p>
+                        
+                        <h3>Ejemplo básico de Dockerfile para Node.js</h3>
+                        <div class="docker-file">
+                            <span class="directive">FROM</span> <span class="value">node:14-alpine</span><br>
+                            <span class="comment"># Establecer directorio de trabajo</span><br>
+                            <span class="directive">WORKDIR</span> <span class="value">/app</span><br>
+                            <br>
+                            <span class="comment"># Copiar archivos de package</span><br>
+                            <span class="directive">COPY</span> <span class="value">package*.json ./</span><br>
+                            <br>
+                            <span class="comment"># Instalar dependencias</span><br>
+                            <span class="directive">RUN</span> <span class="value">npm install</span><br>
+                            <br>
+                            <span class="comment"># Copiar el resto de archivos</span><br>
+                            <span class="directive">COPY</span> <span class="value">. .</span><br>
+                            <br>
+                            <span class="comment"># Puerto expuesto</span><br>
+                            <span class="directive">EXPOSE</span> <span class="value">3000</span><br>
+                            <br>
+                            <span class="comment"># Comando para ejecutar la app</span><br>
+                            <span class="directive">CMD</span> <span class="value">["npm", "start"]</span>
+                        </div>
+                        
+                        <h3>Instrucciones comunes del Dockerfile</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Instrucción</th>
+                                    <th>Propósito</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FROM</td>
+                                    <td>Imagen base a utilizar</td>
+                                    <td>FROM ubuntu:20.04</td>
+                                </tr>
+                                <tr>
+                                    <td>RUN</td>
+                                    <td>Ejecutar comandos durante la construcción</td>
+                                    <td>RUN apt-get update</td>
+                                </tr>
+                                <tr>
+                                    <td>COPY</td>
+                                    <td>Copiar archivos del host a la imagen</td>
+                                    <td>COPY . /app</td>
+                                </tr>
+                                <tr>
+                                    <td>ADD</td>
+                                    <td>Similar a COPY pero con funcionalidades adicionales</td>
+                                    <td>ADD https://example.com/file.tar.gz /tmp</td>
+                                </tr>
+                                <tr>
+                                    <td>WORKDIR</td>
+                                    <td>Establecer directorio de trabajo</td>
+                                    <td>WORKDIR /app</td>
+                                </tr>
+                                <tr>
+                                    <td>EXPOSE</td>
+                                    <td>Documentar puertos expuestos</td>
+                                    <td>EXPOSE 80</td>
+                                </tr>
+                                <tr>
+                                    <td>ENV</td>
+                                    <td>Establecer variables de entorno</td>
+                                    <td>ENV NODE_ENV=production</td>
+                                </tr>
+                                <tr>
+                                    <td>CMD</td>
+                                    <td>Comando por defecto al ejecutar el contenedor</td>
+                                    <td>CMD ["npm", "start"]</td>
+                                </tr>
+                                <tr>
+                                    <td>ENTRYPOINT</td>
+                                    <td>Configura el ejecutable del contenedor</td>
+                                    <td>ENTRYPOINT ["python"]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Construir y ejecutar una imagen personalizada</h3>
+                        <div class="docker-command">
+                            <span class="comment"># Construir la imagen (desde el directorio con Dockerfile)</span><br>
+                            <span class="prompt">$</span> docker build -t my-node-app .<br>
+                            <br>
+                            <span class="comment"># Ejecutar la imagen construida</span><br>
+                            <span class="prompt">$</span> docker run -d -p 3000:3000 my-node-app<br>
+                            <br>
+                            <span class="comment"># Ver imágenes disponibles</span><br>
+                            <span class="prompt">$</span> docker images<br>
+                            <br>
+                            <span class="comment"># Subir imagen a Docker Hub</span><br>
+                            <span class="prompt">$</span> docker tag my-node-app usuario/my-node-app<br>
+                            <span class="prompt">$</span> docker push usuario/my-node-app
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Optimización:</strong> Ordena las instrucciones en el Dockerfile desde las menos cambiantes a las más cambiantes para aprovechar el cache de Docker.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN DOCKER COMPOSE -->
+                    <article id="compose" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Orquestación con Docker Compose</h2>
+                        
+                        <p>Docker Compose permite definir y ejecutar aplicaciones multi-contenedor con un solo archivo YAML.</p>
+                        
+                        <h3>Ejemplo de docker-compose.yml para app web + base de datos</h3>
+                        <div class="docker-file">
+                            <span class="directive">version</span>: <span class="value">'3.8'</span><br>
+                            <br>
+                            <span class="directive">services</span>:<br>
+                            &nbsp;&nbsp;<span class="directive">web</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">build</span>: <span class="value">.</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">ports</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="value">"5000:5000"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">volumes</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="value">.:/code</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">environment</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">FLASK_ENV</span>: <span class="value">"development"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">depends_on</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="value">redis</span><br>
+                            <br>
+                            &nbsp;&nbsp;<span class="directive">redis</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">image</span>: <span class="value">"redis:alpine"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">ports</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="value">"6379:6379"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="directive">volumes</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="value">redis_data:/data</span><br>
+                            <br>
+                            <span class="directive">volumes</span>:<br>
+                            &nbsp;&nbsp;<span class="directive">redis_data</span>:
+                        </div>
+                        
+                        <h3>Comandos esenciales de Docker Compose</h3>
+                        <div class="docker-command">
+                            <span class="comment"># Construir y ejecutar los servicios</span><br>
+                            <span class="prompt">$</span> docker-compose up<br>
+                            <span class="comment"># Ejecutar en segundo plano</span><br>
+                            <span class="prompt">$</span> docker-compose up -d<br>
+                            <br>
+                            <span class="comment"># Detener y eliminar contenedores</span><br>
+                            <span class="prompt">$</span> docker-compose down<br>
+                            <br>
+                            <span class="comment"># Listar servicios</span><br>
+                            <span class="prompt">$</span> docker-compose ps<br>
+                            <br>
+                            <span class="comment"># Ver logs</span><br>
+                            <span class="prompt">$</span> docker-compose logs<br>
+                            <span class="comment"># Ver logs de un servicio específico</span><br>
+                            <span class="prompt">$</span> docker-compose logs web<br>
+                            <br>
+                            <span class="comment"># Construir imágenes sin ejecutar</span><br>
+                            <span class="prompt">$</span> docker-compose build<br>
+                            <br>
+                            <span class="comment"># Ejecutar un comando en un servicio</span><br>
+                            <span class="prompt">$</span> docker-compose exec web bash
+                        </div>
+                        
+                        <h3>Ventajas de Docker Compose</h3>
+                        <ul>
+                            <li><strong>Definición centralizada:</strong> Todos los servicios en un solo archivo</li>
+                            <li><strong>Variables de entorno:</strong> Soporte para archivos .env</li>
+                            <li><strong>Redes aisladas:</strong> Comunicación segura entre contenedores</li>
+                            <li><strong>Volúmenes compartidos:</strong> Fácil configuración de persistencia</li>
+                            <li><strong>Escalado:</strong> Posibilidad de escalar servicios fácilmente</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Para entornos de producción con múltiples hosts, considera usar Docker Swarm o Kubernetes en lugar de solo Docker Compose.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN REDES -->
+                    <article id="redes" class="docker-section">
+                        <h2 class="section-title"><i class="fab fa-docker"></i> Redes en Docker</h2>
+                        
+                        <p>Docker proporciona varios tipos de redes para permitir la comunicación entre contenedores y con el exterior.</p>
+                        
+                        <h3>Tipos de redes en Docker</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-network-wired"></i> Bridge</h4>
+                                <p>Red privada interna por defecto. Los contenedores pueden comunicarse entre sí.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-wifi"></i> Host</h4>
+                                <p>Elimina el aislamiento de red, el contenedor usa la red del host.</p>
+                            </div>                                      
+                            <div class="feature-card">
+                                <h4><i class="fas fa-globe"></i> Overlay</h4>
+                                <p>Permite la comunicación entre contenedores en diferentes hosts (requiere Swarm).</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4><i class="fas fa-cogs"></i> Macvlan</h4>
+                                <p>Asigna una dirección MAC a un contenedor, permitiendo que aparezca como un dispositivo de red independiente.</p>
+                            </div>
+                        </div>
+                        

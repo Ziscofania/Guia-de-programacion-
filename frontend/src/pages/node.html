@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js - Guía para Programadores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/src/css/node.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html#guias">Guías</a></li>
+                    <li><a href="/index.html#descargas">Descargas</a></li>
+                    <li><a href="/index.html#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">
+            <div class="guide-title">
+                <img src="../images/nodejs-icon.png" alt="Node.js">
+                <h1>Guía Completa de Node.js</h1>
+                <p class="guide-description">Domina el desarrollo backend con JavaScript usando Node.js</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion">Introducción a Node.js</a></li>
+                        <li><a href="#instalacion">Instalación</a></li>
+                        <li><a href="#conceptos">Conceptos básicos</a></li>
+                        <li><a href="#modulos">Módulos y NPM</a></li>
+                        <li><a href="#event-loop">Event Loop</a></li>
+                        <li><a href="#express">Express.js</a></li>
+                        <li><a href="#bases-datos">Bases de datos</a></li>
+                        <li><a href="#autenticacion">Autenticación</a></li>
+                        <li><a href="#middlewares">Middlewares</a></li>
+                        <li><a href="#produccion">Node en producción</a></li>
+                        <li><a href="#mejores-practicas">Mejores prácticas</a></li>
+                        <li><a href="#recursos">Recursos adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Introducción a Node.js</h2>
+                        
+                        <p>Node.js es un entorno de ejecución para JavaScript construido con el motor V8 de Chrome. Permite ejecutar JavaScript en el servidor, lo que lo hace ideal para construir aplicaciones backend escalables y de alto rendimiento.</p>
+                        
+                        <h3>¿Por qué usar Node.js?</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-check-circle"></i> JavaScript en todo el stack</h4>
+                                <p>Mismo lenguaje en frontend y backend, mejorando la productividad.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-rocket"></i> Alto rendimiento</h4>
+                                <p>Modelo no bloqueante y basado en eventos para manejar muchas conexiones.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-boxes"></i> Ecosistema rico</h4>
+                                <p>NPM (Node Package Manager) es el mayor repositorio de librerías.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-exchange-alt"></i> Escalabilidad</h4>
+                                <p>Arquitectura ideal para microservicios y aplicaciones en tiempo real.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Arquitectura de Node.js</h3>
+                        <div class="architecture-diagram">
+                            <img src="../images/node-architecture.png" alt="Arquitectura de Node.js">
+                            <p class="image-caption">Componentes principales del ecosistema Node.js</p>
+                        </div>
+                        
+                        <h3>Node.js vs otros lenguajes backend</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Node.js</th>
+                                    <th>PHP</th>
+                                    <th>Python</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Modelo</td>
+                                    <td>Event-driven, no bloqueante</td>
+                                    <td>Bloqueante</td>
+                                    <td>Bloqueante (a menos que use async)</td>
+                                </tr>
+                                <tr>
+                                    <td>Rendimiento</td>
+                                    <td>Alto (V8 engine)</td>
+                                    <td>Moderado</td>
+                                    <td>Moderado</td>
+                                </tr>
+                                <tr>
+                                    <td>Ecosistema</td>
+                                    <td>NPM (más paquetes)</td>
+                                    <td>Composer</td>
+                                    <td>Pip</td>
+                                </tr>
+                                <tr>
+                                    <td>Casos de uso</td>
+                                    <td>APIs, tiempo real, microservicios</td>
+                                    <td>Web tradicional</td>
+                                    <td>Web, data science, scripting</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Node.js es ideal para aplicaciones I/O intensivas (APIs, chats, streaming) pero menos adecuado para CPU intensivas (procesamiento de imágenes, machine learning).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN INSTALACIÓN -->
+                    <article id="instalacion" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Instalación de Node.js</h2>
+                        
+                        <p>Node.js está disponible para los principales sistemas operativos. Aquí te mostramos cómo instalarlo:</p>
+                        
+                        <h3>Windows/macOS</h3>
+                        <ol>
+                            <li>Descarga el instalador desde <a href="https://nodejs.org/" target="_blank">nodejs.org</a> (recomendado LTS)</li>
+                            <li>Ejecuta el instalador y sigue las instrucciones</li>
+                            <li>Verifica la instalación abriendo una terminal y ejecutando:</li>
+                        </ol>
+                        <div class="code-block">
+                            <span class="prompt">$</span> node --version<br>
+                            <span class="prompt">$</span> npm --version
+                        </div>
+                        
+                        <h3>Linux (Ubuntu/Debian)</h3>
+                        <div class="code-block">
+                            <span class="comment"># Usando el gestor de paquetes</span><br>
+                            <span class="prompt">$</span> sudo apt update<br>
+                            <span class="prompt">$</span> sudo apt install nodejs npm<br>
+                            <br>
+                            <span class="comment"># Usando NVM (recomendado para manejar versiones)</span><br>
+                            <span class="prompt">$</span> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash<br>
+                            <span class="comment"># Cierra y reabre la terminal</span><br>
+                            <span class="prompt">$</span> nvm install --lts<br>
+                            <span class="prompt">$</span> nvm use --lts
+                        </div>
+                        
+                        <h3>Verificar instalación</h3>
+                        <p>Crea un archivo test.js con el siguiente contenido:</p>
+                        <div class="code-block">
+                            console.log("¡Node.js funciona correctamente!");
+                        </div>
+                        <p>Ejecútalo con:</p>
+                        <div class="code-block">
+                            <span class="prompt">$</span> node test.js
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Usa NVM (Node Version Manager) para instalar y manejar múltiples versiones de Node.js en tu sistema.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN CONCEPTOS BÁSICOS -->
+                    <article id="conceptos" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Conceptos básicos de Node.js</h2>
+                        
+                        <p>Para trabajar con Node.js es importante entender sus componentes fundamentales:</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-cogs"></i> Motor V8</h4>
+                                <p>Motor de JavaScript de Chrome que compila JS a código máquina.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-project-diagram"></i> Event Loop</h4>
+                                <p>Modelo de concurrencia no bloqueante basado en eventos.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-cube"></i> Módulos</h4>
+                                <p>Sistema para organizar código en archivos reutilizables.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-boxes"></i> NPM</h4>
+                                <p>Gestor de paquetes para instalar librerías de terceros.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Hola Mundo en Node.js</h3>
+                        <p>Crea un archivo <code>app.js</code> con:</p>
+                        <div class="code-block">
+                            <span class="comment">// Importar módulo HTTP</span><br>
+                            const http = require('http');<br>
+                            <br>
+                            <span class="comment">// Crear servidor</span><br>
+                            const server = http.createServer((req, res) => {<br>
+                            &nbsp;&nbsp;res.writeHead(200, {'Content-Type': 'text/plain'});<br>
+                            &nbsp;&nbsp;res.end('Hola Mundo desde Node.js!\n');<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// Escuchar en puerto 3000</span><br>
+                            server.listen(3000, () => {<br>
+                            &nbsp;&nbsp;console.log('Servidor corriendo en http://localhost:3000/');<br>
+                            });
+                        </div>
+                        <p>Ejecuta el servidor:</p>
+                        <div class="code-block">
+                            <span class="prompt">$</span> node app.js
+                        </div>
+                        
+                        <h3>Características clave</h3>
+                        <ul>
+                            <li><strong>Asincronía:</strong> Operaciones no bloqueantes con callbacks, Promesas o async/await</li>
+                            <li><strong>Single-threaded:</strong> Un solo hilo de ejecución (pero con worker threads)</li>
+                            <li><strong>Buffers:</strong> Manejo eficiente de datos binarios</li>
+                            <li><strong>Streams:</strong> Procesamiento de datos en flujo (ideal para grandes volúmenes)</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Node.js usa CommonJS modules por defecto, pero también soporta ES modules (usando .mjs o type: "module" en package.json).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MÓDULOS Y NPM -->
+                    <article id="modulos" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Módulos y NPM</h2>
+                        
+                        <p>Node.js organiza el código en módulos, permitiendo reutilización y organización del código.</p>
+                        
+                        <h3>Sistema de módulos</h3>
+                        <div class="code-block">
+                            <span class="comment">// modulo.js</span><br>
+                            const miFuncion = () => {<br>
+                            &nbsp;&nbsp;return "Hola desde el módulo";<br>
+                            }<br>
+                            <br>
+                            module.exports = miFuncion;<br>
+                            <br>
+                            <span class="comment">// app.js</span><br>
+                            const miModulo = require('./modulo');<br>
+                            console.log(miModulo()); <span class="comment">// "Hola desde el módulo"</span>
+                        </div>
+                        
+                        <h3>package.json</h3>
+                        <p>Archivo fundamental que describe tu proyecto y sus dependencias:</p>
+                        <div class="package-json">
+                            {<br>
+                            &nbsp;&nbsp;<span class="keyword">"name"</span>: <span class="string">"mi-proyecto"</span>,<br>
+                            &nbsp;&nbsp;<span class="keyword">"version"</span>: <span class="string">"1.0.0"</span>,<br>
+                            &nbsp;&nbsp;<span class="keyword">"description"</span>: <span class="string">"Mi proyecto Node.js"</span>,<br>
+                            &nbsp;&nbsp;<span class="keyword">"main"</span>: <span class="string">"app.js"</span>,<br>
+                            &nbsp;&nbsp;<span class="keyword">"scripts"</span>: {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"start"</span>: <span class="string">"node app.js"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"dev"</span>: <span class="string">"nodemon app.js"</span><br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;<span class="keyword">"dependencies"</span>: {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"express"</span>: <span class="string">"^4.17.1"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"mongoose"</span>: <span class="string">"^5.12.3"</span><br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;<span class="keyword">"devDependencies"</span>: {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"nodemon"</span>: <span class="string">"^2.0.7"</span><br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </div>
+                        
+                        <h3>Comandos esenciales de NPM</h3>
+                        <div class="code-block">
+                            <span class="comment"># Inicializar un proyecto (crea package.json)</span><br>
+                            <span class="prompt">$</span> npm init<br>
+                            <span class="prompt">$</span> npm init -y <span class="comment"># Valores por defecto</span><br>
+                            <br>
+                            <span class="comment"># Instalar un paquete</span><br>
+                            <span class="prompt">$</span> npm install express<br>
+                            <br>
+                            <span class="comment"># Instalar como dependencia de desarrollo</span><br>
+                            <span class="prompt">$</span> npm install nodemon --save-dev<br>
+                            <br>
+                            <span class="comment"># Instalar dependencias de un proyecto</span><br>
+                            <span class="prompt">$</span> npm install<br>
+                            <br>
+                            <span class="comment"># Ejecutar scripts</span><br>
+                            <span class="prompt">$</span> npm start<br>
+                            <span class="prompt">$</span> npm run dev
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Usa <code>npx</code> para ejecutar paquetes sin instalarlos globalmente (ej: <code>npx create-react-app</code>).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN EVENT LOOP -->
+                    <article id="event-loop" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Event Loop en Node.js</h2>
+                        
+                        <p>El Event Loop es el corazón del modelo no bloqueante de Node.js, permitiendo manejar múltiples operaciones con un solo hilo.</p>
+                        
+                        <h3>¿Cómo funciona el Event Loop?</h3>
+                        <div class="architecture-diagram">
+                            <img src="../images/event-loop.png" alt="Event Loop de Node.js">
+                            <p class="image-caption">Flujo del Event Loop en Node.js</p>
+                        </div>
+                        
+                        <h3>Fases del Event Loop</h3>
+                        <ol>
+                            <li><strong>Timers:</strong> Ejecuta callbacks de setTimeout() y setInterval()</li>
+                            <li><strong>Pending callbacks:</strong> Ejecuta callbacks de operaciones I/O completadas</li>
+                            <li><strong>Idle, prepare:</strong> Fases internas</li>
+                            <li><strong>Poll:</strong> Recupera nuevos eventos I/O</li>
+                            <li><strong>Check:</strong> Ejecuta callbacks de setImmediate()</li>
+                            <li><strong>Close callbacks:</strong> Ejecuta callbacks de eventos 'close'</li>
+                        </ol>
+                        
+                        <h3>Ejemplo de asincronía</h3>
+                        <div class="code-block">
+                            console.log('Inicio');<br>
+                            <br>
+                            setTimeout(() => {<br>
+                            &nbsp;&nbsp;console.log('Timeout 1');<br>
+                            }, 0);<br>
+                            <br>
+                            setImmediate(() => {<br>
+                            &nbsp;&nbsp;console.log('Immediate');<br>
+                            });<br>
+                            <br>
+                            process.nextTick(() => {<br>
+                            &nbsp;&nbsp;console.log('Next Tick');<br>
+                            });<br>
+                            <br>
+                            console.log('Fin');
+                        </div>
+                        <p>Salida:</p>
+                        <div class="code-block">
+                            Inicio<br>
+                            Fin<br>
+                            Next Tick<br>
+                            Timeout 1<br>
+                            Immediate
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Importante:</strong> Evita operaciones bloqueantes (sincrónicas) en el Event Loop, ya que detendrán toda la aplicación.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN EXPRESS.JS -->
+                    <article id="express" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Express.js</h2>
+                        
+                        <p>Express es el framework web más popular para Node.js, minimalista y flexible para construir aplicaciones web y APIs.</p>
+                        
+                        <h3>Aplicación básica con Express</h3>
+                        <div class="code-block">
+                            <span class="comment">// Instalar Express: npm install express</span><br>
+                            const express = require('express');<br>
+                            const app = express();<br>
+                            const port = 3000;<br>
+                            <br>
+                            <span class="comment">// Ruta básica</span><br>
+                            app.get('/', (req, res) => {<br>
+                            &nbsp;&nbsp;res.send('¡Hola Mundo con Express!');<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// Iniciar servidor</span><br>
+                            app.listen(port, () => {<br>
+                            &nbsp;&nbsp;console.log(`Servidor Express escuchando en http://localhost:${port}`);<br>
+                            });
+                        </div>
+                        
+                        <h3>Rutas y métodos HTTP</h3>
+                        <div class="code-block">
+                            <span class="comment">// GET /users</span><br>
+                            app.get('/users', (req, res) => {<br>
+                            &nbsp;&nbsp;res.json([{id: 1, name: 'Juan'}]);<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// POST /users</span><br>
+                            app.post('/users', (req, res) => {<br>
+                            &nbsp;&nbsp;<span class="comment">// Crear usuario...</span><br>
+                            &nbsp;&nbsp;res.status(201).send('Usuario creado');<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// PUT /users/:id</span><br>
+                            app.put('/users/:id', (req, res) => {<br>
+                            &nbsp;&nbsp;const userId = req.params.id;<br>
+                            &nbsp;&nbsp;<span class="comment">// Actualizar usuario...</span><br>
+                            &nbsp;&nbsp;res.send(`Usuario ${userId} actualizado`);<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// DELETE /users/:id</span><br>
+                            app.delete('/users/:id', (req, res) => {<br>
+                            &nbsp;&nbsp;const userId = req.params.id;<br>
+                            &nbsp;&nbsp;<span class="comment">// Eliminar usuario...</span><br>
+                            &nbsp;&nbsp;res.send(`Usuario ${userId} eliminado`);<br>
+                            });
+                        </div>
+                        
+                        <h3>Middleware en Express</h3>
+                        <p>Funciones que tienen acceso al objeto request (req), response (res) y next()</p>
+                        <div class="code-block">
+                            <span class="comment">// Middleware para loggear peticiones</span><br>
+                            app.use((req, res, next) => {<br>
+                            &nbsp;&nbsp;console.log(`${req.method} ${req.url}`);<br>
+                            &nbsp;&nbsp;next(); <span class="comment">// Pasar al siguiente middleware</span><br>
+                            });<br>
+                            <br>
+                            <span class="comment">// Middleware para parsear JSON</span><br>
+                            app.use(express.json());<br>
+                            <br>
+                            <span class="comment">// Middleware para archivos estáticos</span><br>
+                            app.use(express.static('public'));
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Express no soporta async/await en middlewares por defecto. Usa <code>express-async-errors</code> o maneja los errores manualmente.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN BASES DE DATOS -->
+                    <article id="bases-datos" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Bases de datos con Node.js</h2>
+                        
+                        <p>Node.js puede conectarse a diversos tipos de bases de datos, tanto SQL como NoSQL.</p>
+                        
+                        <h3>Opciones populares</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-database"></i> MongoDB</h4>
+                                <p>Base de datos NoSQL documental, ideal con Mongoose ODM.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-table"></i> MySQL/PostgreSQL</h4>
+                                <p>Bases de datos SQL relacionales con buenos drivers.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-memory"></i> Redis</h4>
+                                <p>Almacén clave-valor en memoria, ideal para caché.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-cloud"></i> Firebase</h4>
+                                <p>Base de datos en tiempo real de Google.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Conexión a MongoDB con Mongoose</h3>
+                        <div class="code-block">
+                            <span class="comment">// Instalar: npm install mongoose</span><br>
+                            const mongoose = require('mongoose');<br>
+                            <br>
+                            <span class="comment">// Conectar a MongoDB</span><br>
+                            mongoose.connect('mongodb://localhost/mi-db', {<br>
+                            &nbsp;&nbsp;useNewUrlParser: true,<br>
+                            &nbsp;&nbsp;useUnifiedTopology: true<br>
+                            })<br>
+                            .then(() => console.log('Conectado a MongoDB'))<br>
+                            .catch(err => console.error('Error de conexión:', err));<br>
+                            <br>
+                            <span class="comment">// Definir esquema y modelo</span><br>
+                            const userSchema = new mongoose.Schema({<br>
+                            &nbsp;&nbsp;name: String,<br>
+                            &nbsp;&nbsp;email: { type: String, required: true, unique: true },<br>
+                            &nbsp;&nbsp;age: Number<br>
+                            });<br>
+                            <br>
+                            const User = mongoose.model('User', userSchema);<br>
+                            <br>
+                            <span class="comment">// Crear usuario</span><br>
+                            async function createUser() {<br>
+                            &nbsp;&nbsp;const user = new User({ name: 'Juan', email: 'juan@example.com' });<br>
+                            &nbsp;&nbsp;await user.save();<br>
+                            &nbsp;&nbsp;console.log('Usuario creado:', user);<br>
+                            }
+                        </div>
+                        
+                        <h3>Conexión a MySQL</h3>
+                        <div class="code-block">
+                            <span class="comment">// Instalar: npm install mysql2</span><br>
+                            const mysql = require('mysql2/promise');<br>
+                            <br>
+                            async function queryDB() {<br>
+                            &nbsp;&nbsp;const connection = await mysql.createConnection({<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;host: 'localhost',<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;user: 'root',<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;password: 'password',<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;database: 'mi_db'<br>
+                            &nbsp;&nbsp;});<br>
+                            <br>
+                            &nbsp;&nbsp;const [rows] = await connection.execute(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'SELECT * FROM users WHERE id = ?', [1]<br>
+                            &nbsp;&nbsp;);<br>
+                            &nbsp;&nbsp;console.log(rows);<br>
+                            &nbsp;&nbsp;await connection.end();<br>
+                            }
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Para MySQL/PostgreSQL considera usar un ORM como Sequelize o TypeORM para mayor productividad.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN AUTENTICACIÓN -->
+                    <article id="autenticacion" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Autenticación en Node.js</h2>
+                        
+                        <p>Implementar autenticación segura es crucial para aplicaciones web. Las opciones más comunes son:</p>
+                        
+                        <h3>1. Sesiones con express-session</h3>
+                        <div class="code-block">
+                            <span class="comment">// Instalar: npm install express-session</span><br>
+                            const session = require('express-session');<br>
+                            <br>
+                            app.use(session({<br>
+                            &nbsp;&nbsp;secret: 'mi-secreto',<br>
+                            &nbsp;&nbsp;resave: false,<br>
+                            &nbsp;&nbsp;saveUninitialized: false,<br>
+                            &nbsp;&nbsp;cookie: { secure: process.env.NODE_ENV === 'production' }<br>
+                            }));<br>
+                            <br>
+                            <span class="comment">// Login</span><br>
+                            app.post('/login', (req, res) => {<br>
+                            &nbsp;&nbsp;<span class="comment">// Verificar credenciales...</span><br>
+                            &nbsp;&nbsp;req.session.userId = user.id;<br>
+                            &nbsp;&nbsp;res.send('Sesión iniciada');<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// Middleware de autenticación</span><br>
+                            function requireAuth(req, res, next) {<br>
+                            &nbsp;&nbsp;if (!req.session.userId) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return res.status(401).send('No autorizado');<br>
+                            &nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;next();<br>
+                            }
+                        </div>
+                        
+                        <h3>2. JWT (JSON Web Tokens)</h3>
+                        <div class="code-block">
+                            <span class="comment">// Instalar: npm install jsonwebtoken</span><br>
+                            const jwt = require('jsonwebtoken');<br>
+                            <br>
+                            <span class="comment">// Generar token</span><br>
+                            app.post('/login', (req, res) => {<br>
+                            &nbsp;&nbsp;<span class="comment">// Verificar credenciales...</span><br>
+                            &nbsp;&nbsp;const token = jwt.sign(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{ userId: user.id },<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;process.env.JWT_SECRET,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{ expiresIn: '1h' }<br>
+                            &nbsp;&nbsp;);<br>
+                            &nbsp;&nbsp;res.json({ token });<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// Middleware de autenticación</span><br>
+                            function authJWT(req, res, next) {<br>
+                            &nbsp;&nbsp;const token = req.headers.authorization?.split(' ')[1];<br>
+                            &nbsp;&nbsp;if (!token) return res.sendStatus(401);<br>
+                            <br>
+                            &nbsp;&nbsp;jwt.verify(token, process.env.JWT_SECRET, (err, user) => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (err) return res.sendStatus(403);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;req.user = user;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;next();<br>
+                            &nbsp;&nbsp;});<br>
+                            }
+                        </div>
+                        
+                        <h3>3. OAuth (Passport.js)</h3>
+                        <p>Passport es el middleware más popular para autenticación con redes sociales:</p>
+                        <div class="code-block">
+                            <span class="comment">// Instalar: npm install passport passport-google-oauth20</span><br>
+                            const passport = require('passport');<br>
+                            const GoogleStrategy = require('passport-google-oauth20').Strategy;<br>
+                            <br>
+                            passport.use(new GoogleStrategy({<br>
+                            &nbsp;&nbsp;clientID: process.env.GOOGLE_CLIENT_ID,<br>
+                            &nbsp;&nbsp;clientSecret: process.env.GOOGLE_CLIENT_SECRET,<br>
+                            &nbsp;&nbsp;callbackURL: '/auth/google/callback'<br>
+                            }, (token, tokenSecret, profile, done) => {<br>
+                            &nbsp;&nbsp;<span class="comment">// Buscar o crear usuario...</span><br>
+                            &nbsp;&nbsp;done(null, user);<br>
+                            }));<br>
+                            <br>
+                            <span class="comment">// Rutas</span><br>
+                            app.get('/auth/google', passport.authenticate('google', {<br>
+                            &nbsp;&nbsp;scope: ['profile', 'email']<br>
+                            }));<br>
+                            <br>
+                            app.get('/auth/google/callback', <br>
+                            &nbsp;&nbsp;passport.authenticate('google', { failureRedirect: '/login' }),<br>
+                            &nbsp;&nbsp;(req, res) => res.redirect('/')<br>
+                            );
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Seguridad:</strong> Nunca almacenes contraseñas en texto plano. Usa bcrypt para hashing: <code>npm install bcrypt</code></p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MIDDLEWARES -->
+                    <article id="middlewares" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Middlewares útiles para Express</h2>
+                        
+                        <p>Los middlewares amplían la funcionalidad de Express. Estos son algunos esenciales:</p>
+                        
+                        <h3>Middlewares de seguridad</h3>
+                        <div class="code-block">
+                            <span class="comment">// helmet: Protección de headers HTTP</span><br>
+                            <span class="prompt">$</span> npm install helmet<br>
+                            app.use(require('helmet')());<br>
+                            <br>
+                            <span class="comment">// cors: Habilitar CORS</span><br>
+                            <span class="prompt">$</span> npm install cors<br>
+                            app.use(require('cors')());<br>
+                            <br>
+                            <span class="comment">// rate-limit: Limitar peticiones</span><br>
+                            <span class="prompt">$</span> npm install express-rate-limit<br>
+                            const limiter = require('express-rate-limit')({<br>
+                            &nbsp;&nbsp;windowMs: 15 * 60 * 1000, <span class="comment">// 15 minutos</span><br>
+                            &nbsp;&nbsp;max: 100 <span class="comment">// 100 peticiones por IP</span><br>
+                            });<br>
+                            app.use(limiter);
+                        </div>
+                        
+                        <h3>Middlewares para desarrollo</h3>
+                        <div class="code-block">
+                            <span class="comment">// morgan: Logging de peticiones HTTP</span><br>
+                            <span class="prompt">$</span> npm install morgan<br>
+                            app.use(require('morgan')('dev'));<br>
+                            <br>
+                            <span class="comment">// nodemon: Reinicio automático (instalar globalmente)</span><br>
+                            <span class="prompt">$</span> npm install -g nodemon<br>
+                            <span class="comment">// Usar: nodemon app.js</span>
+                        </div>
+                        
+                        <h3>Middlewares para producción</h3>
+                        <div class="code-block">
+                            <span class="comment">// compression: Compresión GZIP</span><br>
+                            <span class="prompt">$</span> npm install compression<br>
+                            app.use(require('compression')());<br>
+                            <br>
+                            <span class="comment">// express-static-gzip: Servir archivos estáticos comprimidos</span><br>
+                            <span class="prompt">$</span> npm install express-static-gzip<br>
+                            app.use(require('express-static-gzip')('public'));
+                        </div>
+                        
+                        <div class="tip">
+                            <p><strong>Consejo:</strong> Ordena los middlewares correctamente. Los de seguridad primero, luego los de aplicación y finalmente los de rutas.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN PRODUCCIÓN -->
+                    <article id="produccion" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Node.js en producción</h2>
+                        
+                        <p>Desplegar Node.js en producción requiere consideraciones especiales para rendimiento y confiabilidad.</p>
+                        
+                        <h3>Proceso de despliegue</h3>
+                        <ol>
+                            <li><strong>Variables de entorno:</strong> Usa <code>.env</code> (dotenv) para configuración</li>
+                            <li><strong>Logging:</strong> Implementa sistema de logs (winston, pino)</li>
+                            <li><strong>Monitoreo:</strong> Configura alertas y métricas (PM2, New Relic)</li>
+                            <li><strong>Procesos:</strong> Usa un process manager (PM2, Forever)</li>
+                            <li><strong>Reverse proxy:</strong> Nginx o Apache frente a Node.js</li>
+                        </ol>
+                        
+                        <h3>Configurar PM2 (Process Manager)</h3>
+                        <div class="code-block">
+                            <span class="comment"># Instalar globalmente</span><br>
+                            <span class="prompt">$</span> npm install -g pm2<br>
+                            <br>
+                            <span class="comment"># Iniciar aplicación</span><br>
+                            <span class="prompt">$</span> pm2 start app.js --name "mi-app"<br>
+                            <br>
+                            <span class="comment"># Monitorear procesos</span><br>
+                            <span class="prompt">$</span> pm2 monit<br>
+                            <br>
+                            <span class="comment"># Generar script de inicio</span><br>
+                            <span class="prompt">$</span> pm2 startup<br>
+                            <span class="prompt">$</span> pm2 save<br>
+                            <br>
+                            <span class="comment"># Configurar balanceo de carga (cluster mode)</span><br>
+                            <span class="prompt">$</span> pm2 start app.js -i max
+                        </div>
+                        
+                        <h3>Optimizaciones de rendimiento</h3>
+                        <ul>
+                            <li><strong>Cluster mode:</strong> Aprovecha todos los núcleos del CPU</li>
+                            <li><strong>Caché:</strong> Implementa Redis para caché</li>
+                            <li><strong>Compresión:</strong> Habilita GZIP para respuestas</li>
+                            <li><strong>CDN:</strong> Sirve assets estáticos desde CDN</li>
+                            <li><strong>Connection pooling:</strong> Para bases de datos</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> En producción, siempre usa <code>NODE_ENV=production</code> para optimizaciones y advertencias adicionales.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN MEJORES PRÁCTICAS -->
+                    <article id="mejores-practicas" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Mejores prácticas con Node.js</h2>
+                        
+                        <p>Seguir buenas prácticas mejora la calidad, mantenibilidad y seguridad de tus aplicaciones Node.js.</p>
+                        
+                        <h3>Estructura de proyecto</h3>
+                        <p>Organiza tu código en una estructura clara y escalable:</p>
+                        <div class="code-block">
+                            mi-proyecto/<br>
+                            ├── src/<br>
+                            │   ├── controllers/   <span class="comment"># Lógica de rutas</span><br>
+                            │   ├── models/        <span class="comment"># Modelos de datos</span><br>
+                            │   ├── routes/       <span class="comment"># Definición de rutas</span><br>
+                            │   ├── services/     <span class="comment"># Lógica de negocio</span><br>
+                            │   ├── middlewares/  <span class="comment"># Middlewares personalizados</span><br>
+                            │   ├── utils/        <span class="comment"># Utilidades</span><br>
+                            │   ├── config.js     <span class="comment"># Configuración</span><br>
+                            │   └── app.js        <span class="comment"># Aplicación principal</span><br>
+                            ├── tests/            <span class="comment"># Pruebas</span><br>
+                            ├── public/           <span class="comment"># Archivos estáticos</span><br>
+                            ├── .env              <span class="comment"># Variables de entorno</span><br>
+                            └── package.json
+                        </div>
+                        
+                        <h3>Prácticas recomendadas</h3>
+                        <ul>
+                            <li><strong>Error handling:</strong> Usa middlewares para manejo centralizado de errores</li>
+                            <li><strong>Validación:</strong> Valida entrada de usuario (joi, express-validator)</li>
+                            <li><strong>Testing:</strong> Implementa pruebas (Jest, Mocha, Chai)</li>
+                            <li><strong>Types:</strong> Considera TypeScript para proyectos grandes</li>
+                            <li><strong>ESLint/Prettier:</strong> Mantén consistencia de código</li>
+                            <li><strong>Documentación:</strong> Documenta APIs con Swagger/OpenAPI</li>
+                            <li><strong>Seguridad:</strong> Revisa la lista OWASP para Node.js</li>
+                        </ul>
+                        
+                        <h3>Ejemplo de error handling</h3>
+                        <div class="code-block">
+                            <span class="comment">// Middleware para manejo de errores (debe ser el último)</span><br>
+                            app.use((err, req, res, next) => {<br>
+                            &nbsp;&nbsp;console.error(err.stack);<br>
+                            &nbsp;&nbsp;res.status(500).json({<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;error: 'Algo salió mal',<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;message: process.env.NODE_ENV === 'development' ? err.message : undefined<br>
+                            &nbsp;&nbsp;});<br>
+                            });<br>
+                            <br>
+                            <span class="comment">// En rutas async, usa try/catch o wrap con express-async-errors</span><br>
+                            app.get('/async-route', async (req, res, next) => {<br>
+                            &nbsp;&nbsp;try {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;const data = await someAsyncOperation();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.json(data);<br>
+                            &nbsp;&nbsp;} catch (err) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;next(err); <span class="comment">// Pasar al middleware de errores</span><br>
+                            &nbsp;&nbsp;}<br>
+                            });
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Importante:</strong> Nunca expongas detalles sensibles de errores en producción (stack traces, mensajes internos).</p>
+                        </div>
+                    </article>
+                    
+                    <!-- SECCIÓN RECURSOS -->
+                    <article id="recursos" class="node-section">
+                        <h2 class="section-title"><i class="fab fa-node-js"></i> Recursos adicionales</h2>
+                        
+                        <p>Continúa tu aprendizaje con estos recursos recomendados:</p>
+                        
+                        <h3>Documentación oficial</h3>
+                        <ul>
+                            <li><a href="https://nodejs.org/en/docs/" target="_blank">Documentación de Node.js</a></li>
+                            <li><a href="https://expressjs.com/" target="_blank">Documentación de Express</a></li>
+                            <li><a href="https://docs.npmjs.com/" target="_blank">Documentación de NPM</a></li>
+                        </ul>
+                        
+                        <h3>Cursos y tutoriales</h3>
+                        <ul>
+                            <li><a href="https://nodejs.dev/learn" target="_blank">Node.js.dev Learn</a> - Guía oficial</li>
+                            <li><a href="https://www.freecodecamp.org/learn/" target="_blank">freeCodeCamp</a> - Cursos gratuitos</li>
+                            <li><a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" target="_blank">Udemy: The Complete Node.js Developer Course</a></li>
+                        </ul>
+                        
+                        <h3>Libros recomendados</h3>
+                        <ul>
+                            <li>"Node.js Design Patterns" - Mario Casciaro</li>
+                            <li>"Node.js in Action" - Mike Cantelon</li>
+                            <li>"Web Development with Node and Express" - Ethan Brown</li>
+                        </ul>
+                        
+                        <h3>Herramientas útiles</h3>
+                        <ul>
+                            <li><a href="https://nodemon.io/" target="_blank">Nodemon</a> - Reinicio automático</li>
+                            <li><a href="https://pm2.keymetrics.io/" target="_blank">PM2</a> - Process manager</li>
+                            <li><a href="https://www.postman.com/" target="_blank">Postman</a> - Testear APIs</li>
+                            <li><a href="https://swagger.io/" target="_blank">Swagger</a> - Documentación de APIs</li>
+                        </ul>
+                    </article>
+                    
+                    <div class="guide-download">
+                        <h3>¿Encontraste útil esta guía?</h3>
+                        <p>Descarga la versión en PDF para tenerla siempre a mano:</p>
+                        <a href="#" class="btn btn-large"><i class="fas fa-download"></i> Descargar Guía Completa</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+       <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#guias">Guías</a></li>
+                        <li><a href="#descargas">Descargas</a></li>
+                        <li><a href="#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

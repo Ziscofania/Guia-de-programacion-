@@ -1,0 +1,363 @@
+/* Estilos específicos para la guía */
+        :root {
+            --html-color: #e34f26;
+            --css-color: #2965f1;
+            --js-color: #f7df1e;
+            --dark-bg: #2d2d2d;
+            --light-bg: #f5f5f5;
+        }
+
+        .guide-header {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .guide-title {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .guide-description {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 1rem auto;
+            max-width: 700px;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .guide-sidebar {
+            flex: 0 0 250px;
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .guide-toc {
+            list-style: none;
+        }
+        
+        .guide-toc li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .guide-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .guide-toc a:hover {
+            background: #f0f0f0;
+        }
+        
+        .guide-toc .html-link:hover {
+            color: var(--html-color);
+        }
+        
+        .guide-toc .css-link:hover {
+            color: var(--css-color);
+        }
+        
+        .guide-toc .js-link:hover {
+            color: var(--js-color);
+        }
+        
+        .guide-main {
+            flex: 1;
+        }
+        
+        .tech-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .html-section {
+            border-top: 4px solid var(--html-color);
+        }
+        
+        .css-section {
+            border-top: 4px solid var(--css-color);
+        }
+        
+        .js-section {
+            border-top: 4px solid var(--js-color);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+        
+        .html-title {
+            color: var(--html-color);
+        }
+        
+        .css-title {
+            color: var(--css-color);
+        }
+        
+        .js-title {
+            color: var(--js-color);
+        }
+        
+        .section-title i {
+            margin-right: 0.5rem;
+            font-size: 1.5em;
+        }
+        
+        .code-block {
+            background: var(--dark-bg);
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            line-height: 1.5;
+        }
+        
+        .html-tag {
+            color: #f92672;
+        }
+        
+        .html-attr {
+            color: #a6e22e;
+        }
+        
+        .html-value {
+            color: #e6db74;
+        }
+        
+        .css-selector {
+            color: #66d9ef;
+        }
+        
+        .css-property {
+            color: #a6e22e;
+        }
+        
+        .css-value {
+            color: #ae81ff;
+        }
+        
+        .js-keyword {
+            color: #f92672;
+        }
+        
+        .js-function {
+            color: #66d9ef;
+        }
+        
+        .js-string {
+            color: #e6db74;
+        }
+        
+        .js-number {
+            color: #ae81ff;
+        }
+        
+        .example-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .example-box {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .example-header {
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .html-header {
+            background: rgba(227, 79, 38, 0.1);
+            color: var(--html-color);
+        }
+        
+        .css-header {
+            background: rgba(41, 101, 241, 0.1);
+            color: var(--css-color);
+        }
+        
+        .js-header {
+            background: rgba(247, 223, 30, 0.1);
+            color: #b7a920;
+        }
+        
+        .example-content {
+            padding: 1rem;
+            background: white;
+        }
+        
+        .browser-result {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: white;
+        }
+        
+        .browser-result h4 {
+            margin-top: 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .note {
+            background: #e7f4ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h4 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-card i {
+            margin-right: 0.5rem;
+        }
+        
+        .html-feature {
+            border-top: 3px solid var(--html-color);
+        }
+        
+        .css-feature {
+            border-top: 3px solid var(--css-color);
+        }
+        
+        .js-feature {
+            border-top: 3px solid var(--js-color);
+        }
+        
+        .version-timeline {
+            border-left: 3px solid #ddd;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .version-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .version-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .version-item::before {
+            content: '';
+            position: absolute;
+            left: -1.7rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        
+        .version-year {
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        
+        .version-desc {
+            margin-top: 0.5rem;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .guide-sidebar {
+                position: static;
+                flex: 1;
+                margin-bottom: 2rem;
+            }
+            
+            .example-container {
+                grid-template-columns: 1fr;
+            }
+        }
