@@ -1,0 +1,261 @@
+:root {
+  --backend-color: #8a2be2;
+  --frontend-color: #4b8bbe;
+  --fullstack-color: #2e8b57;
+  --dark-bg: #2d2d2d;
+  --light-bg: #f5f5f5;
+}
+
+.guide-header {
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  margin-bottom: 2rem;
+  padding: 3rem 0;
+}
+
+.guide-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.architecture-icons {
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.architecture-icon {
+  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  transition: transform .3s;
+}
+
+.architecture-icon:hover {
+  transform: scale(1.1);
+}
+
+.guide-description {
+  color: #555;
+  max-width: 700px;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+}
+
+.content-wrapper {
+  gap: 2rem;
+  display: flex;
+}
+
+.guide-sidebar {
+  background: #fff;
+  border-radius: 8px;
+  flex: 0 0 250px;
+  align-self: flex-start;
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.guide-toc {
+  list-style: none;
+}
+
+.guide-toc li {
+  margin-bottom: .8rem;
+}
+
+.guide-toc a {
+  color: #333;
+  border-radius: 4px;
+  padding: .5rem;
+  text-decoration: none;
+  transition: all .3s;
+  display: block;
+}
+
+.guide-toc a:hover {
+  background: #f0f0f0;
+}
+
+.guide-toc .backend-link:hover {
+  color: var(--backend-color);
+}
+
+.guide-toc .frontend-link:hover {
+  color: var(--frontend-color);
+}
+
+.guide-toc .fullstack-link:hover {
+  color: var(--fullstack-color);
+}
+
+.guide-main {
+  flex: 1;
+}
+
+.architecture-section {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.backend-section {
+  border-top: 4px solid var(--backend-color);
+}
+
+.frontend-section {
+  border-top: 4px solid var(--frontend-color);
+}
+
+.fullstack-section {
+  border-top: 4px solid var(--fullstack-color);
+}
+
+.section-title {
+  align-items: center;
+  margin-top: 0;
+  display: flex;
+}
+
+.backend-title {
+  color: var(--backend-color);
+}
+
+.frontend-title {
+  color: var(--frontend-color);
+}
+
+.fullstack-title {
+  color: var(--fullstack-color);
+}
+
+.code-block {
+  background: var(--dark-bg);
+  color: #f8f8f2;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  font-family: Courier New, Courier, monospace;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.folder-structure {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-family: monospace;
+}
+
+.folder {
+  color: #4b8bbe;
+  font-weight: bold;
+}
+
+.file {
+  color: #333;
+  margin-left: 1rem;
+}
+
+.tech-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #0000001a;
+}
+
+.tech-card h4 {
+  align-items: center;
+  margin-top: 0;
+  display: flex;
+}
+
+.tech-card i {
+  margin-right: .5rem;
+}
+
+.backend-tech {
+  border-left: 4px solid var(--backend-color);
+}
+
+.frontend-tech {
+  border-left: 4px solid var(--frontend-color);
+}
+
+.note {
+  background: #e7f4ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 5px 5px 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.warning {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  border-radius: 0 5px 5px 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.tip {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  border-radius: 0 5px 5px 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.comparison-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.comparison-table th, .comparison-table td {
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: .8rem;
+}
+
+.comparison-table th {
+  background-color: #f2f2f2;
+}
+
+.comparison-table tr:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+
+.guide-download {
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+@media (width <= 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .guide-sidebar {
+    flex: 1;
+    margin-bottom: 2rem;
+    position: static;
+  }
+}
+/*# sourceMappingURL=estruturas_de_carpetas.f1bda505.css.map */

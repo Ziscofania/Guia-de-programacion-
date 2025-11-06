@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía para Programadores</title>
+    <link rel="stylesheet" href="/frontend.c92073ef.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/logo.d4f8fe33.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Inicio</a></li>
+                    <li><a href="#guias">Guías</a></li>
+                    <li><a href="#descargas">Descargas</a></li>
+                    <li><a href="#agregar">Contribuir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Aprende a programar con nuestras guías completas</h2>
+            <p>Desde conceptos básicos hasta temas avanzados, todo en un solo lugar.</p>
+            <a href="#guias" class="btn">Explorar Guías</a>
+        </div>
+    </section>
+
+    <section id="guias" class="guides">
+        <div class="container">
+            <h2>Nuestras Guías</h2>
+            <div class="guides-grid">
+                <div class="guide-card">
+                    <img src="/git-icon.d4965c08.png" alt="Git y GitHub">
+                    <h3>Git y GitHub</h3>
+                    <p>Control de versiones y colaboración en proyectos.</p>
+                    <a href="/src/pages/git-github.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/python-icon.1aa94b8e.png" alt="Python">
+                    <h3>Python</h3>
+                    <p>El lenguaje de programación versátil y poderoso.</p>
+                    <a href="/src/pages/python.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/web-icon.5d743aea.png" alt="HTML, CSS y JS">
+                    <h3>HTML, CSS y JS</h3>
+                    <p>Fundamentos del desarrollo web frontend.</p>
+                    <a href="/src/pages/html,css,js.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/structure-icon.b477d54c.png" alt="Estructura de proyectos">
+                    <h3>Estructura Backend/Frontend</h3>
+                    <p>Cómo organizar tus proyectos profesionales.</p>
+                    <a href="/src/pages/estruturas_de_carpetas.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/docker-icon.c055c6b0.png" alt="Docker">
+                    <h3>Docker</h3>
+                    <p>Contenedores para desarrollo y despliegue.</p>
+                    <a href="/src/pages/docker.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/java-icon.a482d500.png" alt="Java">
+                    <h3>Java</h3>
+                    <p>El lenguaje robusto para aplicaciones empresariales.</p>
+                    <a href="/src/pages/sql.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card">
+                    <img src="/sql-icon.f6c500e3.png" alt="SQL">
+                    <h3>Bases de Datos SQL</h3>
+                    <p>Manejo y diseño de bases de datos relacionales.</p>
+                    <a href="/src/pages/sql.html" class="btn">Ver Guía</a>
+                </div>
+
+                <div class="guide-card">
+                    <img src="/node-icon.d6188d83.png" alt="Node.js">
+                    <h3>Node.js</h3>
+                    <p>El entorno de ejecución para JavaScript en el servidor.</p>
+                    <a href="/src/pages/node.html" class="btn">Ver Guía</a>
+                </div>
+                
+                <div class="guide-card add-new">
+                    <i class="fas fa-plus"></i>
+                    <h3>¿Qué te gustaría aprender?</h3>
+                    <p>Sugiere nuevas guías que necesites.</p>
+                    <a href="#agregar" class="btn">Sugerir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="descargas" class="downloads">
+        <div class="container">
+            <h2>Descarga nuestras guías completas</h2>
+            <div class="download-grid">
+                <div class="download-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Git y GitHub - PDF</h3>
+                    <a href="#" class="btn">Descargar</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Python - PDF</h3>
+                    <a href="#" class="btn">Descargar</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Web Development - PDF</h3>
+                    <a href="#" class="btn">Descargar</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-file-archive"></i>
+                    <h3>Todas las guías - ZIP</h3>
+                    <a href="#" class="btn">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agregar" class="contribute">
+        <div class="container">
+            <h2>Contribuye con el proyecto</h2>
+            <p>¿Tienes una guía que quieras compartir? ¡Agrégala a nuestra colección!</p>
+            
+            <form id="upload-form">
+                <div class="form-group">
+                    <label for="guide-title">Título de la guía:</label>
+                    <input type="text" id="guide-title" required="">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guide-category">Categoría:</label>
+                    <select id="guide-category" required="">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="git">Git y GitHub</option>
+                        <option value="python">Python</option>
+                        <option value="web">HTML, CSS y JS</option>
+                        <option value="structure">Estructura de proyectos</option>
+                        <option value="docker">Docker</option>
+                        <option value="java">Java</option>
+                        <option value="sql">Bases de datos SQL</option>
+                        <option value="other">Otra</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guide-file">Sube tu archivo (PDF, DOC, MD):</label>
+                    <input type="file" id="guide-file" accept=".pdf,.doc,.docx,.md" required="">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guide-description">Descripción:</label>
+                    <textarea id="guide-description" rows="4" required=""></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Enviar Guía</button>
+            </form>
+        </div>
+    </section>
+
+     <section id="recursos">
+    <h2>📚 Recursos de programación</h2>
+    <ul id="lista-recursos"></ul>
+  </section>
+
+  <section id="comentarios">
+    <h2>💬 Comentarios</h2>
+    <ul id="lista-comentarios"></ul>
+    <form id="form-comentario">
+      <input type="text" id="nombre" placeholder="Tu nombre" required="">
+      <input type="text" id="mensaje" placeholder="Tu comentario" required="">
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#guias">Guías</a></li>
+                        <li><a href="#descargas">Descargas</a></li>
+                        <li><a href="#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="e884344cbed21965"></script>
+
+
+<script src="/frontend.3464ddca.js"></script></body></html>

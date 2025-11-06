@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git y GitHub - Guía para Programadores</title>
+    <link rel="stylesheet" href="/git-github.877a59ca.css">
+    <link rel="stylesheet" href="/frontend.c92073ef.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/logo.d4f8fe33.png" alt="Guía para Programadores">
+                <h1>Gruta del Programador</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html#guias">Guías</a></li>
+                    <li><a href="/index.html#descargas">Descargas</a></li>
+                    <li><a href="/index.html#agregar">Contribuir</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="guide-header">
+        <div class="container">
+            <div class="guide-title">
+                <img src="/git-icon.d4965c08.png" alt="Git y GitHub">
+                <h1>Guía Completa de Git y GitHub</h1>
+                <p class="guide-description">Domina el control de versiones y la colaboración en proyectos de software</p>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>Contenido</h3>
+                    <ul class="guide-toc">
+                        <li><a href="#introduccion">Introducción</a></li>
+                        <li><a href="#instalacion">Instalación</a></li>
+                        <li><a href="#configuracion">Configuración inicial</a></li>
+                        <li><a href="#conceptos-basicos">Conceptos básicos</a></li>
+                        <li><a href="#comandos-basicos">Comandos básicos</a></li>
+                        <li><a href="#ramas">Trabajo con ramas</a></li>
+                        <li><a href="#github">GitHub esencial</a></li>
+                        <li><a href="#colaboracion">Colaboración en proyectos</a></li>
+                        <li><a href="#flujos-trabajo">Flujos de trabajo</a></li>
+                        <li><a href="#comandos-avanzados">Comandos avanzados</a></li>
+                        <li><a href="#recursos">Recursos adicionales</a></li>
+                    </ul>
+                </aside>
+                
+                <main class="guide-main">
+                    <article id="introduccion">
+                        <h2>Introducción a Git y GitHub</h2>
+                        <p>Git es un sistema de control de versiones distribuido creado por Linus Torvalds en 2005. Permite a los desarrolladores rastrear cambios en el código fuente durante el desarrollo de software.</p>
+                        
+                        <p>GitHub, por otro lado, es una plataforma de alojamiento para proyectos que utilizan Git. Proporciona una interfaz web gráfica, herramientas de gestión de proyectos y características de colaboración como gestión de problemas y solicitudes de extracción.</p>
+                        
+                        <h3>Beneficios clave</h3>
+                        <ul>
+                            <li><strong>Historial completo:</strong> Cada cambio queda registrado con autor, fecha y descripción</li>
+                            <li><strong>Trabajo en equipo:</strong> Múltiples desarrolladores pueden trabajar en paralelo</li>
+                            <li><strong>Seguridad:</strong> El código está respaldado y versionado</li>
+                            <li><strong>Flexibilidad:</strong> Ramas independientes para diferentes características</li>
+                            <li><strong>Revertir cambios:</strong> Posibilidad de volver a cualquier versión anterior</li>
+                        </ul>
+                        
+                        <div class="guide-image">
+                            <img src="/git-workflow.684474ac.png" alt="Flujo de trabajo con Git">
+                            <p class="image-caption">Flujo básico de trabajo con Git</p>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Nota:</strong> Git es diferente de GitHub. Git es la herramienta de control de versiones, mientras que GitHub es un servicio que aloja repositorios Git en la nube.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="instalacion">
+                        <h2>Instalación de Git</h2>
+                        <p>Para comenzar a usar Git, primero necesitas instalarlo en tu computadora. Los pasos varían según tu sistema operativo:</p>
+                        
+                        <h3>Windows</h3>
+                        <ol>
+                            <li>Descarga el instalador desde <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a></li>
+                            <li>Ejecuta el instalador</li>
+                            <li>Sigue las instrucciones (opciones predeterminadas son recomendadas para principiantes)</li>
+                            <li>Abre Git Bash para comenzar a usar Git</li>
+                        </ol>
+                        
+                        <h3>macOS</h3>
+                        <p>Opción 1: Usa Homebrew (recomendado para desarrolladores)</p>
+                        <pre><code>brew install git</code></pre>
+                        
+                        <p>Opción 2: Descarga el instalador desde <a href="https://git-scm.com/download/mac" target="_blank">git-scm.com</a></p>
+                        
+                        <h3>Linux (Debian/Ubuntu)</h3>
+                        <pre><code>sudo apt-get update
+sudo apt-get install git</code></pre>
+                        
+                        <h3>Verificar instalación</h3>
+                        <p>Para confirmar que Git se instaló correctamente, ejecuta:</p>
+                        <pre><code>git --version</code></pre>
+                        <p>Deberías ver algo como: git version 2.37.1</p>
+                    </article>
+                    
+                    <article id="configuracion">
+                        <h2>Configuración inicial</h2>
+                        <p>Después de instalar Git, es importante configurar tu identidad:</p>
+                        
+                        <pre><code>git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"</code></pre>
+                        
+                        <h3>Configuraciones útiles</h3>
+                        
+                        <p>Establecer el editor de texto predeterminado (VSCode en este ejemplo):</p>
+                        <pre><code>git config --global core.editor "code --wait"</code></pre>
+                        
+                        <p>Habilitar colores en la salida de Git:</p>
+                        <pre><code>git config --global color.ui auto</code></pre>
+                        
+                        <p>Ver todas tus configuraciones:</p>
+                        <pre><code>git config --list</code></pre>
+                        
+                        <div class="note">
+                            <p><strong>Consejo:</strong> La configuración global se guarda en (~/.gitconfig) en Linux/macOS o C:\Users\TuUsuario\.gitconfig en Windows.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="conceptos-basicos">
+                        <h2>Conceptos básicos de Git</h2>
+                        
+                        <h3>Repositorio</h3>
+                        <p>Un proyecto Git. Puede ser local (en tu computadora) o remoto (en un servidor como GitHub).</p>
+                        
+                        <h3>Commit</h3>
+                        <p>Un conjunto de cambios guardados en el historial con un mensaje descriptivo.</p>
+                        
+                        <h3>Rama (Branch)</h3>
+                        <p>Línea independiente de desarrollo. Por defecto, todos los repositorios tienen una rama main o master.</p>
+                        
+                        <h3>Working Directory</h3>
+                        <p>Los archivos en tu sistema de archivos que Git está monitoreando.</p>
+                        
+                        <h3>Staging Area (Índice)</h3>
+                        <p>Un área intermedia donde preparas los cambios antes de hacer commit.</p>
+                        
+                        <h3>HEAD</h3>
+                        <p>Referencia al commit actual en el que estás trabajando.</p>
+                        
+                        <div class="guide-image">
+                            <img src="/git-areas.ee4fafde.png" alt="Áreas de Git">
+                            <p class="image-caption">Las tres áreas principales de Git: Working Directory, Staging Area y Repository</p>
+                        </div>
+                    </article>
+                    
+                    <article id="comandos-basicos">
+                        <h2>Comandos básicos de Git</h2>
+                        
+                        <h3>Inicializar un repositorio</h3>
+                        <div class="command-example">
+                            <p>Crear un nuevo repositorio Git:</p>
+                            <pre><code>git init</code></pre>
+                        </div>
+                        
+                        <h3>Clonar un repositorio existente</h3>
+                        <div class="command-example">
+                            <p>Descargar un repositorio remoto:</p>
+                            <pre><code>git clone https://github.com/usuario/repositorio.git</code></pre>
+                        </div>
+                        
+                        <h3>Ver el estado del repositorio</h3>
+                        <div class="command-example">
+                            <pre><code>git status</code></pre>
+                        </div>
+                        
+                        <h3>Añadir archivos al staging</h3>
+                        <div class="command-example">
+                            <p>Añadir un archivo específico:</p>
+                            <pre><code>git add archivo.txt</code></pre>
+                            
+                            <p>Añadir todos los archivos cambiados:</p>
+                            <pre><code>git add .</code></pre>
+                        </div>
+                        
+                        <h3>Hacer commit de los cambios</h3>
+                        <div class="command-example">
+                            <pre><code>git commit -m "Mensaje descriptivo del cambio"</code></pre>
+                        </div>
+                        
+                        <h3>Ver el historial de commits</h3>
+                        <div class="command-example">
+                            <pre><code>git log</code></pre>
+                            
+                            <p>Versión compacta:</p>
+                            <pre><code>git log --oneline</code></pre>
+                        </div>
+                        
+                        <div class="note">
+                            <p><strong>Buenas prácticas:</strong> Los mensajes de commit deben ser descriptivos y en presente ("Agrega función X" en lugar de "Agregué función X").</p>
+                        </div>
+                    </article>
+                    
+                    <article id="ramas">
+                        <h2>Trabajo con ramas</h2>
+                        <p>Las ramas permiten desarrollar características de forma aislada sin afectar el código principal.</p>
+                        
+                        <h3>Crear una nueva rama</h3>
+                        <div class="command-example">
+                            <pre><code>git branch nombre-rama</code></pre>
+                        </div>
+                        
+                        <h3>Cambiar a una rama</h3>
+                        <div class="command-example">
+                            <pre><code>git checkout nombre-rama</code></pre>
+                            
+                            <p>O en versiones recientes de Git:</p>
+                            <pre><code>git switch nombre-rama</code></pre>
+                        </div>
+                        
+                        <h3>Crear y cambiar a una nueva rama</h3>
+                        <div class="command-example">
+                            <pre><code>git checkout -b nombre-rama</code></pre>
+                        </div>
+                        
+                        <h3>Listar todas las ramas</h3>
+                        <div class="command-example">
+                            <pre><code>git branch</code></pre>
+                            
+                            <p>Listar ramas remotas también:</p>
+                            <pre><code>git branch -a</code></pre>
+                        </div>
+                        
+                        <h3>Fusionar ramas</h3>
+                        <div class="command-example">
+                            <p>Primero cambia a la rama que recibirá los cambios (normalmente main):</p>
+                            <pre><code>git checkout main</code></pre>
+                            
+                            <p>Luego fusiona la otra rama:</p>
+                            <pre><code>git merge nombre-rama</code></pre>
+                        </div>
+                        
+                        <h3>Resolver conflictos</h3>
+                        <p>Cuando Git no puede fusionar automáticamente, marca los conflictos en los archivos. Debes editarlos manualmente, luego:</p>
+                        <div class="command-example">
+                            <pre><code>git add archivo-con-conflicto.txt
+git commit</code></pre>
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Importante:</strong> Nunca trabajes directamente en la rama main. Crea una rama para cada nueva característica o corrección.</p>
+                        </div>
+                    </article>
+                    
+                    <article id="github">
+                        <h2>GitHub esencial</h2>
+                        <p>GitHub es la plataforma más popular para alojar repositorios Git. Ofrece características adicionales como:</p>
+                        <ul>
+                            <li>Interfaz web para repositorios</li>
+                            <li>Pull Requests (solicitudes de extracción)</li>
+                            <li>Issues (seguimiento de problemas)</li>
+                            <li>GitHub Actions (CI/CD)</li>
+                            <li>GitHub Pages (hosting estático)</li>
+                        </ul>
+                        
+                        <h3>Conectar un repositorio local a GitHub</h3>
+                        <ol>
+                            <li>Crea un nuevo repositorio en GitHub (sin inicializarlo)</li>
+                            <li>Copia la URL del repositorio (HTTPS o SSH)</li>
+                            <li>En tu repositorio local, añade el remoto:</li>
+                        </ol>
+                        <div class="command-example">
+                            <pre><code>git remote add origin https://github.com/usuario/repositorio.git</code></pre>
+                        </div>
+                        
+                        <h3>Subir cambios a GitHub (primer push)</h3>
+                        <div class="command-example">
+                            <pre><code>git push -u origin main</code></pre>
+                        </div>
+                        
+                        <h3>Subir cambios posteriores</h3>
+                        <div class="command-example">
+                            <pre><code>git push</code></pre>
+                        </div>
+                        
+                        <h3>Descargar cambios de GitHub</h3>
+                        <div class="command-example">
+                            <pre><code>git pull</code></pre>
+                        </div>
+                        
+                        <h3>Clonar un repositorio existente</h3>
+                        <div class="command-example">
+                            <pre><code>git clone https://github.com/usuario/repositorio.git</code></pre>
+                        </div>
+                        
+                        <h3>Forkear un repositorio</h3>
+                        <p>En GitHub, hacer "fork" crea una copia personal de un repositorio en tu cuenta, permitiéndote contribuir a proyectos abiertos.</p>
+                    </article>
+                    
+                    <article id="colaboracion">
+                        <h2>Colaboración en proyectos</h2>
+                        
+                        <h3>Flujo de trabajo típico</h3>
+                        <ol>
+                            <li>Hacer fork del repositorio original</li>
+                            <li>Clonar tu fork localmente</li>
+                            <li>Crear una rama para tu característica</li>
+                            <li>Hacer commits de tus cambios</li>
+                            <li>Subir la rama a tu fork</li>
+                            <li>Crear un Pull Request al repositorio original</li>
+                        </ol>
+                        
+                        <h3>Pull Request (PR)</h3>
+                        <p>Solicitud para fusionar tus cambios con el repositorio principal. Incluye:</p>
+                        <ul>
+                            <li>Título descriptivo</li>
+                            <li>Descripción detallada de los cambios</li>
+                            <li>Referencia a issues relacionados</li>
+                            <li>Capturas de pantalla si es necesario</li>
+                        </ul>
+                        
+                        <h3>Code Review</h3>
+                        <p>Proceso donde otros desarrolladores revisan tus cambios antes de fusionarlos. Pueden:</p>
+                        <ul>
+                            <li>Aprobar el PR</li>
+                            <li>Solicitar cambios</li>
+                            <li>Dejar comentarios</li>
+                        </ul>
+                        
+                        <h3>Sincronizar tu fork</h3>
+                        <p>Para mantener tu fork actualizado con el repositorio original:</p>
+                        <div class="command-example">
+                            <pre><code>git remote add upstream https://github.com/original/repositorio.git
+git fetch upstream
+git merge upstream/main</code></pre>
+                        </div>
+                    </article>
+                    
+                    <article id="flujos-trabajo">
+                        <h2>Flujos de trabajo comunes</h2>
+                        
+                        <h3>Git Flow</h3>
+                        <p>Modelo de ramificación estandarizado con ramas principales:</p>
+                        <ul>
+                            <li><strong>main/master:</strong> Código de producción</li>
+                            <li><strong>develop:</strong> Integración de características</li>
+                            <li><strong>feature/:</strong> Ramas para nuevas funcionalidades</li>
+                            <li><strong>release/:</strong> Preparación para producción</li>
+                            <li><strong>hotfix/:</strong> Correcciones urgentes</li>
+                        </ul>
+                        
+                        <h3>GitHub Flow</h3>
+                        <p>Flujo más simple adecuado para integración continua:</p>
+                        <ol>
+                            <li>Crea una rama desde main</li>
+                            <li>Haz commits en esa rama</li>
+                            <li>Abre un Pull Request</li>
+                            <li>Discute y revisa el código</li>
+                            <li>Despliega para pruebas</li>
+                            <li>Fusiona con main</li>
+                        </ol>
+                        
+                        <h3>Trunk-Based Development</h3>
+                        <p>Los desarrolladores trabajan en ramas de corta duración o directamente en main, con múltiples despliegues diarios.</p>
+                    </article>
+                    
+                    <article id="comandos-avanzados">
+                        <h2>Comandos avanzados de Git</h2>
+                        
+                        <h3>Modificar el último commit</h3>
+                        <div class="command-example">
+                            <pre><code>git commit --amend</code></pre>
+                        </div>
+                        
+                        <h3>Deshacer cambios</h3>
+                        <p>Descartar cambios en el working directory:</p>
+                        <div class="command-example">
+                            <pre><code>git checkout -- archivo.txt</code></pre>
+                        </div>
+                        
+                        <p>Sacar archivos del staging:</p>
+                        <div class="command-example">
+                            <pre><code>git reset HEAD archivo.txt</code></pre>
+                        </div>
+                        
+                        <h3>Rebase</h3>
+                        <p>Reaplicar commits sobre otra rama base:</p>
+                        <div class="command-example">
+                            <pre><code>git checkout mi-rama
+git rebase main</code></pre>
+                        </div>
+                        
+                        <div class="warning">
+                            <p><strong>Advertencia:</strong> No hagas rebase de commits que ya han sido compartidos con otros.</p>
+                        </div>
+                        
+                        <h3>Stash</h3>
+                        <p>Guardar cambios temporales sin hacer commit:</p>
+                        <div class="command-example">
+                            <pre><code>git stash</code></pre>
+                            
+                            <p>Recuperar cambios guardados:</p>
+                            <pre><code>git stash pop</code></pre>
+                        </div>
+                        
+                        <h3>Cherry-pick</h3>
+                        <p>Aplicar un commit específico de otra rama:</p>
+                        <div class="command-example">
+                            <pre><code>git cherry-pick abc1234</code></pre>
+                        </div>
+                    </article>
+                    
+                    <article id="recursos">
+                        <h2>Recursos adicionales</h2>
+                        
+                        <h3>Documentación oficial</h3>
+                        <ul>
+                            <li><a href="https://git-scm.com/doc" target="_blank">Documentación de Git</a></li>
+                            <li><a href="https://docs.github.com" target="_blank">Documentación de GitHub</a></li>
+                        </ul>
+                        
+                        <h3>Cursos y tutoriales</h3>
+                        <ul>
+                            <li><a href="https://learngitbranching.js.org" target="_blank">Learn Git Branching (interactivo)</a></li>
+                            <li><a href="https://www.atlassian.com/git/tutorials" target="_blank">Tutoriales de Git de Atlassian</a></li>
+                            <li><a href="https://lab.github.com" target="_blank">GitHub Learning Lab</a></li>
+                        </ul>
+                        
+                        <h3>Herramientas</h3>
+                        <ul>
+                            <li><a href="https://desktop.github.com" target="_blank">GitHub Desktop</a> (GUI para Git)</li>
+                            <li><a href="https://www.sourcetreeapp.com" target="_blank">Sourcetree</a> (otra GUI popular)</li>
+                            <li><a href="https://gitkraken.com" target="_blank">GitKraken</a> (cliente Git con gráficos)</li>
+                        </ul>
+                        
+                        <h3>Cheat Sheets</h3>
+                        <ul>
+                            <li><a href="https://training.github.com/downloads/es_ES/github-git-cheat-sheet" target="_blank">Git Cheat Sheet en español</a></li>
+                            <li><a href="https://github.github.com/training-kit/downloads/es_ES/github-git-cheat-sheet" target="_blank">GitHub Cheat Sheet</a></li>
+                        </ul>
+                    </article>
+                    
+                    <div class="guide-download">
+                        <h3>¿Quieres esta guía en formato PDF?</h3>
+                        <p>Descarga la versión completa con todos los comandos y ejemplos prácticos.</p>
+                        <a href="#" class="btn"><i class="fas fa-download"></i> Descargar Guía Completa</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruta del Programador</h3>
+                    <p>Tu fuente confiable para aprender desarrollo de software.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/index.html#guias">Guías</a></li>
+                        <li><a href="/index.html#descargas">Descargas</a></li>
+                        <li><a href="/index.html#agregar">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>info@grupadelprogramador.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Gruta del Programador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/frontend.09c24910.js"></script>
+
+<script src="/git-github.ac059583.js"></script></body></html>
