@@ -536,3 +536,44 @@ footer {
         padding: 1.5rem;
     }
 }
+/* =========================================================
+   Breadcrumbs (Migas de Pan)
+   ========================================================= */
+.breadcrumbs {
+    background: var(--light-color);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.breadcrumbs a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.breadcrumbs a:hover {
+    color: var(--secondary-color);
+}
+
+.breadcrumbs .separator {
+    color: #cbd5f5;
+}
+
+.breadcrumbs .current {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Opcional: icono de inicio */
+.breadcrumbs i {
+    margin-right: 4px;
+}
