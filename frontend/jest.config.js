@@ -1,5 +1,7 @@
 export default {
-testEnvironment: "jsdom",
-transform: {},
-roots: ["<rootDir>/test"],
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+\\.js$": "babel-jest",
+  },
+  roots: ["<rootDir>/test"],
 };

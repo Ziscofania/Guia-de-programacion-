@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html --port 5173",
     "test": "jest --coverage"
@@ -11,7 +12,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^29.7.0",
     "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "parcel": "^2.9.3"
   }
 }

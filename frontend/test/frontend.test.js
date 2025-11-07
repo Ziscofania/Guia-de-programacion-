@@ -6,10 +6,10 @@ import fs from "fs";
 import path from "path";
 
 // Cargar el HTML antes de cada prueba
-const html = fs.readFileSync(path.resolve(__dirname, "../../src/pages/index.html"), "utf8");
+const html = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
 document.body.innerHTML = html;
 
-const script = fs.readFileSync(path.resolve(__dirname, "../../src/js/script.js"), "utf8");
+const script = fs.readFileSync(path.resolve(__dirname, "../src/js/script.js"), "utf8");
 eval(script);
 
 describe("Frontend - Página principal", () => {
