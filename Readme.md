@@ -20,7 +20,7 @@ El propósito de este proyecto es brindar una plataforma educativa clara, funcio
 
 ---
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 - **Gestión del proyecto:** Git y GitHub
